@@ -2,191 +2,191 @@
 import type { HTMLAttributes } from "astro/types";
 
 interface Props {
-    character: string;
-    name: string;
-    style?: string;
+  character: string;
+  name: string;
+  style?: string;
 }
 
 const { character, name, style } = Astro.props;
 ---
 
-<Bubble className="bubble" character={character} style={style}>
-    <div class="icon__wrapper">
-        <div class="icon__box">
-            <div class="icon__base"></div>
-        </div>
+<div class="bubble">
+  <div class="icon__wrapper">
+    <div class="icon__box">
+      <div class="icon__base"></div>
     </div>
-    <div class="line">
-        <div class="name">
-            {name}
-        </div>
-        <slot />
+  </div>
+  <div class="line">
+    <div class="name">
+      {name}
     </div>
-</Bubble>
+    <slot />
+  </div>
+</div>
 
 <style lang="scss">
-    :root {
-        --bubble-icon-border: 12px 4px;
-        --bubble-icon-size: 50px;
-        --bubble-icon-sizeSmall: 45px;
-        --bubble-name-case: uppercase;
-        --bubble-line-border: 8px;
-        --bubble-line-size: 1em;
-        --bubble-line-gap: 0.15em;
+  :root {
+    --bubble-icon-border: 12px 4px;
+    --bubble-icon-size: 50px;
+    --bubble-icon-sizeSmall: 45px;
+    --bubble-name-case: uppercase;
+    --bubble-line-border: 8px;
+    --bubble-line-size: 1em;
+    --bubble-line-gap: 0.15em;
 
-        --mode-transition: 0.2s ease;
+    --mode-transition: 0.2s ease;
+  }
+
+  .bubble {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    line-height: 1.2;
+    grid-column-gap: 12px;
+    grid-row-gap: 1px;
+    column-gap: 12px;
+    row-gap: 1px;
+    font-size: var(--bubble-line-size);
+    transition: 0.2s ease;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .icon {
+    grid-column: 1;
+    filter: var(--img-filter, unset);
+
+    &__box {
+      border-radius: var(--bubble-icon-border);
+      position: relative;
+      overflow: hidden;
+      width: var(--bubble-icon-size);
+      height: var(--bubble-icon-size);
+      transition: 0.2s ease;
     }
 
-    .bubble {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        line-height: 1.2;
-        grid-column-gap: 12px;
-        grid-row-gap: 1px;
-        column-gap: 12px;
-        row-gap: 1px;
-        font-size: var(--bubble-line-size);
-        transition: 0.2s ease;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+    &__base {
+      display: block;
+      background:
+        100% / 100%
+          var(
+            --icon,
+            url("https://cdn.jsdelivr.net/gh/enstars/img/icon/unknown.png")
+          ),
+        var(--color, #acb0be);
+      width: 100%;
+      height: 100%;
     }
+  }
 
-    .icon {
-        grid-column: 1;
-        filter: var(--img-filter, unset);
+  .name {
+    font-size: 0.85em;
+    line-height: 0.8;
+    text-transform: var(--bubble-name-case);
+    color: var(--text-secondary);
+    margin-bottom: var(--bubble-line-gap);
+  }
 
-        &__box {
-            border-radius: var(--bubble-icon-border);
-            position: relative;
-            overflow: hidden;
-            width: var(--bubble-icon-size);
-            height: var(--bubble-icon-size);
-            transition: 0.2s ease;
-        }
+  .line {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2;
+    // row-gap: var(--bubble-line-gap);
 
-        &__base {
-            display: block;
-            background:
-                100% / 100%
-                    var(
-                        --icon,
-                        url("https://cdn.jsdelivr.net/gh/enstars/img/icon/unknown.png")
-                    ),
-                var(--color, #acb0be);
-            width: 100%;
-            height: 100%;
-        }
-    }
+    p {
+      align-self: flex-start;
+      background: var(--bubble-bg, var(--bubble-bg-default));
+      color: var(--text-primary);
+      padding: 0.6em;
+      margin: 0;
+      border-radius: var(--bubble-line-border);
+      position: relative;
+      transition: 0.2s ease;
 
-    .name {
-        font-size: 0.85em;
-        line-height: 0.8;
-        text-transform: var(--bubble-name-case);
-        color: var(--text-secondary);
+      &:not(:last-child) {
         margin-bottom: var(--bubble-line-gap);
-    }
+      }
 
-    .line {
-        display: flex;
-        flex-direction: column;
-        grid-column: 2;
-        // row-gap: var(--bubble-line-gap);
+      &:hover {
+        transform: translate(2px, 0px);
+      }
 
-        p {
-            align-self: flex-start;
-            background: var(--bubble-bg, var(--bubble-bg-default));
-            color: var(--text-primary);
-            padding: 0.6em;
-            margin: 0;
-            border-radius: var(--bubble-line-border);
-            position: relative;
-            transition: 0.2s ease;
+      &:nth-child(2) {
+        border-top-left-radius: 0;
 
-            &:not(:last-child) {
-                margin-bottom: var(--bubble-line-gap);
-            }
-
-            &:hover {
-                transform: translate(2px, 0px);
-            }
-
-            &:nth-child(2) {
-                border-top-left-radius: 0;
-
-                &::before {
-                    content: "";
-                    display: block;
-                    background: var(--bubble-bg, var(--bubble-bg-default));
-                    width: 8px;
-                    height: 12px;
-                    position: absolute;
-                    top: 0;
-                    left: -7px;
-                    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 12'%3E%3Cpath d='M6,12H7V0H.59C.17,0,0,.11,0,.55V1c0,.21.13.44.59.71C4.31,3.88,6,7.61,6,12Z'/%3E%3C/svg%3E")
-                        no-repeat 100% 100%;
-                    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 12'%3E%3Cpath d='M6,12H7V0H.59C.17,0,0,.11,0,.55V1c0,.21.13.44.59.71C4.31,3.88,6,7.61,6,12Z'/%3E%3C/svg%3E")
-                        no-repeat 100% 100%;
-                }
-            }
+        &::before {
+          content: "";
+          display: block;
+          background: var(--bubble-bg, var(--bubble-bg-default));
+          width: 8px;
+          height: 12px;
+          position: absolute;
+          top: 0;
+          left: -7px;
+          -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 12'%3E%3Cpath d='M6,12H7V0H.59C.17,0,0,.11,0,.55V1c0,.21.13.44.59.71C4.31,3.88,6,7.61,6,12Z'/%3E%3C/svg%3E")
+            no-repeat 100% 100%;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 12'%3E%3Cpath d='M6,12H7V0H.59C.17,0,0,.11,0,.55V1c0,.21.13.44.59.71C4.31,3.88,6,7.61,6,12Z'/%3E%3C/svg%3E")
+            no-repeat 100% 100%;
         }
+      }
+    }
+  }
+
+  %icon-silhouette {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #000;
+    -webkit-mask-image: var(
+      --icon,
+      url("https://cdn.jsdelivr.net/gh/enstars/img/icon/unknown.png")
+    );
+    -webkit-mask-size: 100%;
+    -webkit-mask-position: 100%;
+    mask-image: var(
+      --icon,
+      url("https://cdn.jsdelivr.net/gh/enstars/img/icon/unknown.png")
+    );
+    mask-size: 100%;
+    mask-position: 100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .unknown {
+    .icon {
+      &__base {
+        background: #acb0be;
+      }
+
+      &__wrapper::after {
+        @extend %icon-silhouette;
+      }
     }
 
-    %icon-silhouette {
-        content: "";
-        display: block;
-        position: absolute;
-        background: #000;
-        -webkit-mask-image: var(
-            --icon,
-            url("https://cdn.jsdelivr.net/gh/enstars/img/icon/unknown.png")
-        );
-        -webkit-mask-size: 100%;
-        -webkit-mask-position: 100%;
-        mask-image: var(
-            --icon,
-            url("https://cdn.jsdelivr.net/gh/enstars/img/icon/unknown.png")
-        );
-        mask-size: 100%;
-        mask-position: 100%;
-        top: 0;
-        width: 100%;
-        height: 100%;
+    .line p {
+      background: var(--bubble-bg-default);
+
+      &:nth-child(2)::before {
+        background: var(--bubble-bg-default);
+      }
     }
+  }
 
-    .unknown {
-        .icon {
-            &__base {
-                background: #acb0be;
-            }
-
-            &__wrapper::after {
-                @extend %icon-silhouette;
-            }
-        }
-
-        .line p {
-            background: var(--bubble-bg-default);
-
-            &:nth-child(2)::before {
-                background: var(--bubble-bg-default);
-            }
-        }
+  .hidden {
+    .icon__box::after {
+      @extend %icon-silhouette;
     }
+  }
 
-    .hidden {
-        .icon__box::after {
-            @extend %icon-silhouette;
-        }
+  @media (max-width: 650px) {
+    .icon__box {
+      width: var(--msr-icon-sizeSmall);
+      height: var(--msr-icon-sizeSmall);
     }
-
-    @media (max-width: 650px) {
-        .icon__box {
-            width: var(--msr-icon-sizeSmall);
-            height: var(--msr-icon-sizeSmall);
-        }
-    }
+  }
 </style>
