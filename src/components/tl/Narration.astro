@@ -1,0 +1,51 @@
+<div class="narration">
+    <div class="lines">
+        <slot />
+    </div>
+</div>
+
+<style lang="scss">
+    .narration {
+        display: grid;
+        align-items: center;
+        grid-template-columns: auto 1fr;
+        transition: grid-template 0.2s ease;
+        grid-gap: 10px;
+        gap: 10px;
+        // -webkit-touch-callout: none;
+        // -webkit-user-select: none;
+        // -khtml-user-select: none;
+        // -moz-user-select: none;
+        // -ms-user-select: none;
+        // user-select: none;
+
+        .lines {
+            display: flex;
+            flex-direction: column;
+            grid-column: 2;
+
+            :global(p) {
+                margin: 0 0 0.25em 0;
+                transition: transform 0.2s ease;
+
+                &:hover {
+                    transform: translate(2px, 0px);
+                }
+            }
+        }
+
+        &::before {
+            content: "";
+            height: 0.1em;
+            width: var(--bubble-icon-size);
+            display: block;
+            border-bottom: solid var(--bubble-line-color) 1px;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .narration {
+            grid-template: 1fr / var(--bubble-icon-sizeSmall) 1fr;
+        }
+    }
+</style>
