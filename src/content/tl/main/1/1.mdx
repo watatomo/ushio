@@ -1,53 +1,81 @@
 ---
 title: "000-A01: My Sweet Hometown"
+# layout: "../../../../layouts/Translation.astro"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jun 03 2024"
 heroImage: "/blog-placeholder-5.jpg"
+series: "18tr"
 ---
 
-import Bubble from "../../../../components/Bubble.astro";
+import "../../../../styles/18tr.scss";
+import Bubble from "../../../../components/tl/Bubble.astro";
+import Location from "../../../../components/tl/Location.astro";
 
-Intercom: Please have your arrival card filled out in preparation for our landing.
+Announcer: Please have your arrival card filled out in preparation for our landing.
 
-Intercom: We hope you enjoy the rest of your flight until we arrive.
+Announcer: We hope you enjoy the rest of your flight until we arrive.
 
 <Bubble character="Kaede">
 The memories of a trip are like a cassette tape.
 
-On the A-side are all the fun experiences, and on the B-side… are the tough times that you’ll inevitably have to face.
+On the A-side are all the fun experiences, and on the B-side… are the tough times that you’ll inevitably have to face. Neither side can exist without the other.
 
-Neither side can exist without the other. …But even those rough patches are things to love about travel.
-
+…But even those rough patches are things to love about travel.
 </Bubble>
 
-Intercom: We will soon be arriving at Tokyo Metropolis International Airport.
+<Location name="Plane"/>
 
-Momiji: …I can’t wait to see you again, Kafka.
+Announcer: We will soon be arriving at Tokyo Metropolis International Airport.
 
-Seatmate: Are you recording something with that? Those things haven’t been around in over five decades.
+<Bubble character="Kaede">
+…I can’t wait to see you again, Kafka.
+</Bubble>
 
-Momiji: Oh, yeah. It’s a cassette tape.
+<Bubble character="Kuguri" name="Seatmate">
+Are you recording something with that? Those things haven’t been around in over five decades.
+</Bubble>
 
-Momiji: I think they were used a lot around the end of the 20th century… up until the 90s.
+<Bubble character="Kaede">
+Oh, yeah. It’s a cassette tape.
 
-Seatmate: I’ve heard they’ve been getting popular again lately. People call it “ret,” I think… I’ve been seeing that word around a lot. Are you a fan of ret things?
+I think they were used a lot around the end of the 20th century… up until the 90s.
+</Bubble>
 
-Momiji: I’m not super into the whole ret thing… but I do really like cassettes.
+<Bubble character="Kuguri" name="Seatmate">
+I’ve heard they’ve been getting popular again lately. People call it “ret,” I think… I’ve been seeing that word around a lot. Are you a fan of ret things?
+</Bubble>
+
+<Bubble character="Kaede">
+I mean, I'm not super into it… but I do really like cassettes.
+</Bubble>
 
 ???: “Hey! …Don’t…move already!”
 
-???: “…plane with you…bad mood…stand and wait…piss me off.”
+???: “...plane with you…bad mood…stand and wait…piss me off.”
 
 ???: “HUH?! I’m…bad mood!”
 
-Momiji: (What’s going on… Are they arguing?)
+<Bubble character="Kaede">
+(What’s going on… Are they arguing?)
+</Bubble>
 
-Seatmate: Good grief… They’re putting on quite the show.
+<Bubble character="Kuguri" name="Seatmate">
+Good grief… They’re putting on quite the show.
 
-Seatmate: But it seems like I was able to have a wonderful flight sitting next to you. Thank you dearly, rani.
+But it seems like I was able to have a wonderful flight sitting next to you. Thank you dearly, fiú.
 
-Momiji: Oh, no, not at all… the pleasure’s all mine!
+</Bubble>
 
-Seatmate: Are you coming home to JPN from somewhere?
+{/* Seatmate: But it seems like I was able to have a wonderful flight sitting next to you. Thank you dearly, rani. */}
 
-Momiji: Yeah, I’m going back to my hometown. I live in HAMA-18.
+<Bubble character="Kaede">
+Oh, no, not at all… the pleasure’s all mine!
+</Bubble>
+
+<Bubble character="Kuguri" name="Seatmate">
+Are you coming home to JPN from somewhere?
+</Bubble>
+
+<Bubble character="Kaede">
+Yeah, I’m going back to my hometown. I live in HAMA-18.
+</Bubble>
