@@ -1,0 +1,21 @@
+diff --git a/node_modules/@astrojs/mdx/dist/plugins.js b/node_modules/@astrojs/mdx/dist/plugins.js
+index e4b4712..416204c 100644
+--- a/node_modules/@astrojs/mdx/dist/plugins.js
++++ b/node_modules/@astrojs/mdx/dist/plugins.js
+@@ -17,6 +17,8 @@ import rehypeMetaString from "./rehype-meta-string.js";
+ import { rehypeOptimizeStatic } from "./rehype-optimize-static.js";
+ const isPerformanceBenchmark = Boolean(process.env.ASTRO_PERFORMANCE_BENCHMARK);
+ function createMdxProcessor(mdxOptions, extraOptions) {
++    const r = import.meta.url.replace("node_modules/@astrojs/mdx/dist/plugins.js","");
++    console.log("Ushio - importing from", r)
+   return createProcessor({
+     remarkPlugins: getRemarkPlugins(mdxOptions),
+     rehypePlugins: getRehypePlugins(mdxOptions),
+@@ -27,6 +29,7 @@ function createMdxProcessor(mdxOptions, extraOptions) {
+     format: "mdx",
+     mdExtensions: [],
+     elementAttributeNameCase: "html",
++    baseUrl: r,
+     SourceMapGenerator: extraOptions.sourcemap ? SourceMapGenerator : void 0
+   });
+ }
