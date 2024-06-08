@@ -9,19 +9,3 @@ const { type } = Astro.props;
 <div class:list={["box", type]}>
     <slot />
 </div>
-
-<style lang="scss">
-    .box {
-        &.radio {
-            background: #ccd0da;
-            text-align: center;
-            padding: 0.5em;
-            margin: 1.5em;
-            clip-path: polygon(3% 0, 97% 0, 100% 10%, 100% 90%, 97% 100%, 3% 100%, 0 90%, 0 10%);
-
-            :global(p) {
-                margin: 0;
-            }
-        }
-    }
-</style>
