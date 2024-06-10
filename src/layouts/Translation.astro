@@ -9,7 +9,7 @@ import "../styles/tl/pages.scss";
 
 type Props = CollectionEntry<"tl">["data"];
 
-const { title, description, heroImage } = Astro.props;
+const { title, description, series } = Astro.props;
 ---
 
 <html lang="en">
@@ -40,5 +40,33 @@ const { title, description, heroImage } = Astro.props;
         </main>
 
         <Footer />
+
+        <!-- bruh why isn't this working -->
+        {
+            series == "18tr" ? (
+                <div id="genderChoice" class="lightbox__wrapper">
+                    <div class="lightbox__container">test</div>
+                </div>
+            ) : null
+        }
+
+        <div id="genderChoice" class="lightbox__wrapper">
+            <div class="lightbox__container">
+                <div class="names">
+                    <input type="text" id="firstName" value="Kaede" />
+                    <input type="text" id="lastName" value="Hamasaki" />
+                </div>
+                <div class="genders">
+                    <div>
+                        <input type="radio" id="m" name="gender" value="male" />
+                        <label for="m">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="f" name="gender" value="female" />
+                        <label for="m">Female</label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

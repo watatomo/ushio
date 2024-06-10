@@ -250,3 +250,41 @@
         border-bottom: solid var(--bubble-line-color) 1px;
     }
 }
+
+// Lightbox
+.lightbox {
+    &__wrapper {
+        display: flex;
+        position: fixed;
+        z-index: 999;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.55);
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        background-color: var(--background-primary);
+        border-radius: 8px;
+        height: auto;
+        width: 600px;
+        max-width: 90vw;
+        color: var(--text-primary);
+        padding: 2.25em;
+
+        .genders {
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+        }
+    }
+}
