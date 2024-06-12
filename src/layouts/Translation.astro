@@ -4,6 +4,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+import StoryOptions from "../components/tl/StoryOptions.astro";
+
 import "../styles/variables/tl.scss";
 import "../styles/tl/pages.scss";
 
@@ -41,32 +43,6 @@ const { title, description, series } = Astro.props;
 
         <Footer />
 
-        <!-- bruh why isn't this working -->
-        {
-            series == "18tr" ? (
-                <div id="genderChoice" class="lightbox__wrapper">
-                    <div class="lightbox__container">test</div>
-                </div>
-            ) : null
-        }
-
-        <div id="genderChoice" class="lightbox__wrapper">
-            <div class="lightbox__container">
-                <div class="names">
-                    <input type="text" id="firstName" value="Kaede" />
-                    <input type="text" id="lastName" value="Hamasaki" />
-                </div>
-                <div class="genders">
-                    <div>
-                        <input type="radio" id="m" name="gender" value="male" />
-                        <label for="m">Male</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="f" name="gender" value="female" />
-                        <label for="m">Female</label>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {series === "18tr" ? <StoryOptions /> : null}
     </body>
 </html>

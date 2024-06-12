@@ -1,0 +1,77 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div id="storyOptions" class="lightbox__wrapper" style="display: flex">
+    <div class="lightbox__container">
+        <div class="close-button">
+            <Icon name="x" id="closeStoryOptions" />
+        </div>
+        <div class="header">Story Options</div>
+        <div class="names">
+            <input type="text" id="firstName" value="Kaede" />
+            <input type="text" id="lastName" value="Hamasaki" />
+        </div>
+        <div class="genders">
+            <div>
+                <input type="radio" id="m" name="gender" value="male" checked />
+                <label for="m">Male</label>
+            </div>
+            <div>
+                <input type="radio" id="f" name="gender" value="female" />
+                <label for="f">Female</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    const radioButtons = document.querySelectorAll('input[name="gender"]');
+    const closeStoryOptions = document.getElementById("closeStoryOptions");
+    const firstNameInput = document.getElementById("firstName");
+    const lastNameInput = document.getElementById("lastName");
+
+    radioButtons.forEach((radioButton) => {
+        radioButton.addEventListener("change", function () {
+            updateFirstName(this.value);
+            lastNameInput.value = "Hamasaki";
+        });
+    });
+
+    function updateFirstName(gender) {
+        if (gender === "male") {
+            firstNameInput.value = "Kaede";
+        } else {
+            firstNameInput.value = "Momiji";
+        }
+    }
+
+    closeStoryOptions.addEventListener("click", function () {
+        const firstName = firstNameInput.value;
+        const lastName = lastNameInput.value;
+        const selectedRadio = document.querySelector('input[name="gender"]:checked');
+        const gender = selectedRadio.value;
+
+        const storyData = {
+            firstName,
+            lastName,
+            gender,
+        };
+
+        localStorage.setItem("storyData", JSON.stringify(storyData));
+        document.getElementById("storyOptions").style.display = "none";
+    });
+
+    const storedData = localStorage.getItem("storyData");
+    if (storedData) {
+        const data = JSON.parse(storedData);
+        const genderRadio = document.getElementById(data.gender);
+
+        firstNameInput.value = data.firstName;
+        lastNameInput.value = data.lastName;
+
+        if (genderRadio) {
+            genderRadio.checked = true;
+        }
+    }
+</script>
