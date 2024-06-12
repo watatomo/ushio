@@ -30,11 +30,29 @@ import { Icon } from "astro-icon/components";
     const closeStoryOptions = document.getElementById("closeStoryOptions");
     const firstNameInput = document.getElementById("firstName");
     const lastNameInput = document.getElementById("lastName");
+    const storedData = localStorage.getItem("storyData");
+    const charaElements = document.querySelectorAll('[character="MC"]');
+
+    if (storedData) {
+        const data = JSON.parse(storedData);
+        setCharaAttribute(data.gender);
+    } else {
+        const defaultData = {
+            firstName: "Kaede",
+            lastName: "Hamasaki",
+            gender: "male",
+        };
+
+        localStorage.setItem("storyData", JSON.stringify(defaultData));
+
+        setCharaAttribute(defaultData.gender);
+    }
 
     radioButtons.forEach((radioButton) => {
         radioButton.addEventListener("change", function () {
             updateFirstName(this.value);
             lastNameInput.value = "Hamasaki";
+            setCharaAttribute(this.value);
         });
     });
 
@@ -44,6 +62,16 @@ import { Icon } from "astro-icon/components";
         } else {
             firstNameInput.value = "Momiji";
         }
+    }
+
+    function setCharaAttribute(gender) {
+        charaElements.forEach((element) => {
+            if (gender === "male") {
+                element.setAttribute("character", "Kaede");
+            } else {
+                element.setAttribute("character", "Momiji");
+            }
+        });
     }
 
     closeStoryOptions.addEventListener("click", function () {
@@ -61,17 +89,4 @@ import { Icon } from "astro-icon/components";
         localStorage.setItem("storyData", JSON.stringify(storyData));
         document.getElementById("storyOptions").style.display = "none";
     });
-
-    const storedData = localStorage.getItem("storyData");
-    if (storedData) {
-        const data = JSON.parse(storedData);
-        const genderRadio = document.getElementById(data.gender);
-
-        firstNameInput.value = data.firstName;
-        lastNameInput.value = data.lastName;
-
-        if (genderRadio) {
-            genderRadio.checked = true;
-        }
-    }
 </script>
