@@ -62,12 +62,16 @@
     p {
         align-self: flex-start;
         background: var(--bubble-bg, var(--bubble-bg-default));
-        color: var(--text-primary);
+        color: var(--bubble-text);
         padding: 0.6em;
         margin: 0;
         border-radius: var(--bubble-line-border);
         position: relative;
         transition: 0.2s ease;
+
+        t {
+            color: var(--bubble-text-thought);
+        }
 
         &:not(:last-child) {
             margin-bottom: var(--bubble-line-gap);

@@ -35,7 +35,7 @@ import { Icon } from "astro-icon/components";
 
     if (storedData) {
         const data = JSON.parse(storedData);
-        setCharaAttribute(data.gender);
+        setChara(data.gender);
     } else {
         const defaultData = {
             firstName: "Kaede",
@@ -45,14 +45,14 @@ import { Icon } from "astro-icon/components";
 
         localStorage.setItem("storyData", JSON.stringify(defaultData));
 
-        setCharaAttribute(defaultData.gender);
+        setChara(defaultData.gender);
     }
 
     radioButtons.forEach((radioButton) => {
         radioButton.addEventListener("change", function () {
             updateFirstName(this.value);
             lastNameInput.value = "Hamasaki";
-            setCharaAttribute(this.value);
+            setChara(this.value);
         });
     });
 
@@ -64,15 +64,29 @@ import { Icon } from "astro-icon/components";
         }
     }
 
-    function setCharaAttribute(gender) {
+    function setChara(gender) {
         charaElements.forEach((element) => {
             if (gender === "male") {
                 element.setAttribute("character", "Kaede");
             } else {
                 element.setAttribute("character", "Momiji");
             }
+
+            const nameDiv = element.querySelector(".name");
+            if (nameDiv) {
+                nameDiv.textContent = firstNameInput.value;
+            }
         });
     }
+
+    firstNameInput.addEventListener("change", function () {
+        charaElements.forEach((element) => {
+            const nameDiv = element.querySelector(".name");
+            if (nameDiv) {
+                nameDiv.textContent = firstNameInput.value;
+            }
+        });
+    });
 
     closeStoryOptions.addEventListener("click", function () {
         const firstName = firstNameInput.value;

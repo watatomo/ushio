@@ -1,11 +1,11 @@
 ---
 interface Props {
-    choice: string;
+    g: string;
 }
 
-const { choice } = Astro.props;
+const { g } = Astro.props;
 ---
 
-<p><slot /></p>
+<p g={g}><slot /></p>
 
-<script is:inline></script>
+<!-- <script is:inline></script> -->
