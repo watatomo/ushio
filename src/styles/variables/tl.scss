@@ -1,18 +1,18 @@
 :root {
     --bubble-text: var(--text-primary);
     --bubble-text-thought: var(--text-secondary);
+    --bubble-bg-default: hsl(223, 16%, 88%);
     --bubble-icon-border: 12px 4px;
     --bubble-icon-size: 50px;
     --bubble-icon-sizeSmall: 45px;
     --bubble-name-case: uppercase;
-    --bubble-line-border: 8px;
+    --bubble-line-border: 15px;
     --bubble-line-size: 1em;
     --bubble-line-gap: 0.15em;
     --bubble-line-color: #8c8fa1;
     --mode-transition: 0.2s ease;
 
     [character] {
-        --bubble-bg-default: hsl(223, 16%, 88%);
         --bubble-bg: hsl(var(--hue), 22%, 88%);
     }
 }

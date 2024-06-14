@@ -6,9 +6,9 @@ const tl = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-        series: z.string().optional(),
+        series: z.string(),
 		// Transform string to Date object
-		pubDate: z.coerce.date(),
+		pubDate: z.coerce.date().optional(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
 	}),
