@@ -7,6 +7,9 @@ const tl = defineCollection({
 		title: z.string(),
 		description: z.string(),
         series: z.string(),
+        story: z.string().optional(),
+        previous: z.number().optional(),
+        next: z.number().optional(),
 		// Transform string to Date object
 		pubDate: z.coerce.date().optional(),
 		updatedDate: z.coerce.date().optional(),

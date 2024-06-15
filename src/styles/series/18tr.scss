@@ -8,13 +8,14 @@
             --color: #{$color};
             --hue: #{color.hue($color)};
             --icon: url("https://cdn.jsdelivr.net/gh/kagukura/img/icons/#{string.to-lower-case($name)}.png");
+            --msg-icon: url("https://cdn.jsdelivr.net/gh/kagukura/img/msg_icons/#{string.to-lower-case($name)}.png");
         }
     }
 }
 
 @include characters(
-    $Kaede: #c4ff64,
-    $Momiji: #c4ff64,
+    $Kaede: #c8ff46,
+    $Momiji: #c8ff46,
     $Renga: #dcaa3c,
     $Kafka: #916eff,
     $Ten: #c8d7eb,

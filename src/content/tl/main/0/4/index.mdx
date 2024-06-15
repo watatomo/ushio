@@ -9,6 +9,7 @@ import "styles/series/18tr.scss";
 import Bubble from "components/tl/Bubble.astro";
 import Location from "components/tl/Location.astro";
 import Diff from "components/tl/Diff.astro";
+import Phone from "components/tl/Phone.astro";
 
 <Bubble character="MC">
 You’ll catch a cold if we stay out here.
@@ -120,23 +121,27 @@ I promise!
 …I still remember that day.
 </Bubble>
 
-[phone]
-Kafka: Surgery’s done
+<Phone to="Kafka Oguro">
+<div character="Kafka"><div>
+    <p class="tail">Surgery’s done</p>
+</div></div>
 
-MC: WHAT?!
+<div class="sent">
+    <p>WHAT?!</p>
+    <p class="tail">YOUR SURGERY? IT’S DONE?? WHAT???</p>
+</div>
 
-MC: YOUR SURGERY? IT’S DONE?? WHAT???
+<div character="Kafka"><div>
+    <p class="tail">Sorry, everything happened so suddenly I didn’t have time to tell you</p>
+</div></div>
 
-Kafka: Sorry, everything happened so suddenly I didn’t have time to tell you
-
-MC: How did it go?
-
-MC: Kafka?
-
-MC: Are you okay?
-
-MC: HELLO?
-[phone-end]
+<div class="sent">
+    <p>How did it go?</p>
+    <p>Kafka?</p>
+    <p>Are you okay?</p>
+    <p class="tail">HELLO?</p>
+</div>
+</Phone>
 
 <Bubble character="MC">
 He’s not responding…
@@ -305,7 +310,7 @@ Let’s go on a trip together after the rain stops. Together.
 </Bubble>
 
 <Bubble character="Kafka">
-Kafka: You want me to go with you?
+You want me to go with you?
 </Bubble>
 
 <Bubble character="MC">

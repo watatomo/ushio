@@ -46,7 +46,7 @@
             }
 
             &:nth-child(2) {
-                border-top-left-radius: 2px;
+                border-top-left-radius: 3px;
 
                 // &::before {
                 //     content: "";
@@ -331,6 +331,100 @@
             display: flex;
             flex-direction: row;
             gap: 1em;
+        }
+    }
+}
+
+// Phone
+
+.phone {
+    max-width: 350px;
+    margin: 0 auto;
+    background-color: #1e66f5;
+    padding: 15px;
+    border-radius: 25px;
+
+    .msg {
+        display: flex;
+        flex-direction: column;
+        background-color: #eff1f5;
+        padding: 15px;
+        border-radius: 0 0 20px 20px;
+
+        &-header {
+            font-size: 1.1em;
+            display: flex;
+            justify-content: center;
+            background-color: #04a5e5;
+            color: #fff;
+            border-radius: 20px 20px 0 0;
+            padding: 15px;
+        }
+    }
+
+    p {
+        max-width: calc(350px / 2);
+        padding: 10px;
+        line-height: 1.1;
+        word-wrap: break-word;
+        border-radius: 15px;
+        margin: 0;
+
+        &:not(:last-child) {
+            margin-bottom: 1px;
+        }
+    }
+
+    .sent {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        p {
+            background-color: #04a5e5;
+            color: #fff;
+
+            &.tail {
+                border-bottom-right-radius: 3px;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    [character] {
+        display: inline-grid;
+        grid-template-columns: auto 1fr;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        p {
+            background-color: #ccd0da;
+            color: var(--bubble-text);
+
+            &.tail {
+                border-bottom-left-radius: 3px;
+            }
+        }
+
+        &::before {
+            content: "";
+            align-self: flex-end;
+            margin-right: 8px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: 100%/100% var(--msg-icon);
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
         }
     }
 }

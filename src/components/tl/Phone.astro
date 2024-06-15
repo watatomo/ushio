@@ -1,0 +1,14 @@
+---
+interface Props {
+    to: string;
+}
+
+const { to } = Astro.props;
+---
+
+<div class="phone">
+    <div class="msg-header">{to}</div>
+    <div class="msg">
+        <slot />
+    </div>
+</div>
