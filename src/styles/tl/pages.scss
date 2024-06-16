@@ -262,7 +262,8 @@
 
 // Location
 
-.location {
+.location,
+.flashback {
     display: grid;
     margin: 1em 0;
     align-items: center;
@@ -341,15 +342,18 @@
     max-width: 350px;
     margin: 0 auto;
     background-color: #1e66f5;
-    padding: 15px;
-    border-radius: 25px;
+    padding: 5px;
+    border-radius: 30px;
 
     .msg {
         display: flex;
         flex-direction: column;
         background-color: #eff1f5;
         padding: 15px;
-        border-radius: 0 0 20px 20px;
+        border-radius: 0 0 25px 25px;
+        border-right: 5px solid #000;
+        border-left: 5px solid #000;
+        border-bottom: 5px solid #000;
 
         &-header {
             font-size: 1.1em;
@@ -357,8 +361,11 @@
             justify-content: center;
             background-color: #04a5e5;
             color: #fff;
-            border-radius: 20px 20px 0 0;
+            border-radius: 25px 25px 0 0;
             padding: 15px;
+            border-top: 5px solid #000;
+            border-right: 5px solid #000;
+            border-left: 5px solid #000;
         }
     }
 
@@ -384,7 +391,7 @@
             background-color: #04a5e5;
             color: #fff;
 
-            &.tail {
+            &:last-child {
                 border-bottom-right-radius: 3px;
             }
         }
@@ -408,7 +415,7 @@
             background-color: #ccd0da;
             color: var(--bubble-text);
 
-            &.tail {
+            &:last-child {
                 border-bottom-left-radius: 3px;
             }
         }

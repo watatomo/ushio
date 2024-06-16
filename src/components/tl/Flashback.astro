@@ -1,0 +1,14 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    start?: boolean;
+    end?: boolean;
+}
+
+const { start, end } = Astro.props;
+---
+
+<div class="flashback">
+    <div><Icon name="history" /><strong>Flashback&nbsp;{start ? "Start" || end : "End"}</strong></div>
+</div>

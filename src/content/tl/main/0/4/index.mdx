@@ -8,8 +8,11 @@ series: "18tr"
 import "styles/series/18tr.scss";
 import Bubble from "components/tl/Bubble.astro";
 import Location from "components/tl/Location.astro";
+import Flashback from "components/tl/Flashback.astro";
 import Diff from "components/tl/Diff.astro";
 import Phone from "components/tl/Phone.astro";
+
+<Flashback start />
 
 <Bubble character="MC">
 You’ll catch a cold if we stay out here.
@@ -115,6 +118,8 @@ Promise?
 I promise!
 </Bubble>
 
+<Flashback end />
+
 <Location name="Oguro Hospital - Hallway"/>
 
 <Bubble character="MC">
@@ -123,23 +128,23 @@ I promise!
 
 <Phone to="Kafka Oguro">
 <div character="Kafka"><div>
-    <p class="tail">Surgery’s done</p>
+    <p>Surgery’s done</p>
 </div></div>
 
 <div class="sent">
     <p>WHAT?!</p>
-    <p class="tail">YOUR SURGERY? IT’S DONE?? WHAT???</p>
+    <p>YOUR SURGERY? IT’S DONE?? WHAT???</p>
 </div>
 
 <div character="Kafka"><div>
-    <p class="tail">Sorry, everything happened so suddenly I didn’t have time to tell you</p>
+    <p>Sorry, everything happened so suddenly I didn’t have time to tell you</p>
 </div></div>
 
 <div class="sent">
     <p>How did it go?</p>
     <p>Kafka?</p>
     <p>Are you okay?</p>
-    <p class="tail">HELLO?</p>
+    <p>HELLO?</p>
 </div>
 </Phone>
 
