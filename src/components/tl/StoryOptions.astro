@@ -2,28 +2,26 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<div id="storyOptions" class="lightbox__wrapper" style="display: none">
-    <div class="lightbox__container">
-        <div class="close-button">
-            <Icon name="x" id="closeStoryOptions" />
+<dialog id="storyOptions" class="modal">
+    <div class="close-button">
+        <Icon name="x" id="closeStoryOptions" />
+    </div>
+    <div class="header">Story Options</div>
+    <div class="names">
+        <input type="text" id="firstName" value="Kaede" />
+        <input type="text" id="lastName" value="Hamasaki" />
+    </div>
+    <div class="genders">
+        <div>
+            <input type="radio" id="m" name="gender" value="male" checked />
+            <label for="m">Male</label>
         </div>
-        <div class="header">Story Options</div>
-        <div class="names">
-            <input type="text" id="firstName" value="Kaede" />
-            <input type="text" id="lastName" value="Hamasaki" />
-        </div>
-        <div class="genders">
-            <div>
-                <input type="radio" id="m" name="gender" value="male" checked />
-                <label for="m">Male</label>
-            </div>
-            <div>
-                <input type="radio" id="f" name="gender" value="female" />
-                <label for="f">Female</label>
-            </div>
+        <div>
+            <input type="radio" id="f" name="gender" value="female" />
+            <label for="f">Female</label>
         </div>
     </div>
-</div>
+</dialog>
 
 <script is:inline>
     const radioButtons = document.querySelectorAll('input[name="gender"]');
