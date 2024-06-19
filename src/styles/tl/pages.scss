@@ -234,7 +234,7 @@
     &.radio {
         background: rgba(#df8e1d, 18%);
         text-align: center;
-        padding: 0.5em;
+        padding: 0.75em;
         margin: 1em 1.5em;
         clip-path: polygon(
             3% 0,
@@ -300,6 +300,22 @@
 }
 
 // Modal
+
+button#storyOptionsButton {
+    z-index: 999;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    padding: 10px;
+    border: none;
+    filter: drop-shadow(0 0 5px #00000075);
+
+    svg {
+        font-size: 24px;
+    }
+}
+
 .modal {
     // &__wrapper {
     //     position: fixed;
@@ -314,16 +330,13 @@
     //     background-color: rgba(0, 0, 0, 0.55);
     // }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    // display: flex;
+    border: none;
     position: relative;
     background-color: var(--background-primary);
     border-radius: 8px;
     height: auto;
-    width: 600px;
-    max-width: 90vw;
+    max-width: 600px;
     color: var(--text-primary);
     padding: 2.25em;
 
@@ -337,6 +350,13 @@
         z-index: 2;
         background-color: rgba(0, 0, 0, 0.55);
     }
+}
+
+// Navigation
+.story-nav {
+    z-index: 999;
+    position: fixed;
+    bottom: 20px;
 }
 
 // Phone

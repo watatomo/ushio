@@ -4,13 +4,14 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 
 import StoryOptions from "../components/tl/StoryOptions.astro";
+import Navigation from "../components/tl/Navigation.astro";
 
 import "../styles/variables/tl.scss";
 import "../styles/tl/pages.scss";
 
 type Props = CollectionEntry<"tl">["data"];
 
-const { title, description, series } = Astro.props;
+const { title, description, series, story, previous, next } = Astro.props;
 ---
 
 <html lang="en">
@@ -43,7 +44,7 @@ const { title, description, series } = Astro.props;
                 <slot />
             </article>
         </main>
-
+        {story || previous || next ? <Navigation story={story} previous={previous} next={next} /> : null}
         {series === "18tr" ? <StoryOptions /> : null}
     </body>
 </html>

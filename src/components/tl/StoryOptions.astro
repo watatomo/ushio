@@ -2,34 +2,51 @@
 import { Icon } from "astro-icon/components";
 ---
 
+<button id="storyOptionsButton">
+    <Icon name="settings" />
+</button>
+
 <dialog id="storyOptions" class="modal">
-    <div class="close-button">
-        <Icon name="x" id="closeStoryOptions" />
-    </div>
-    <div class="header">Story Options</div>
-    <div class="names">
-        <input type="text" id="firstName" value="Kaede" />
-        <input type="text" id="lastName" value="Hamasaki" />
-    </div>
-    <div class="genders">
-        <div>
-            <input type="radio" id="m" name="gender" value="male" checked />
-            <label for="m">Male</label>
+    <form method="dialog">
+        <button class="close-button" autofocus>
+            <Icon name="x" id="closeStoryOptions" />
+        </button>
+        <div class="header">Story Options</div>
+        <div class="names">
+            <input type="text" id="firstName" value="Kaede" />
+            <input type="text" id="lastName" value="Hamasaki" />
         </div>
-        <div>
-            <input type="radio" id="f" name="gender" value="female" />
-            <label for="f">Female</label>
+        <div class="genders">
+            <div>
+                <input type="radio" id="m" name="gender" value="male" checked />
+                <label for="m">Male</label>
+            </div>
+            <div>
+                <input type="radio" id="f" name="gender" value="female" />
+                <label for="f">Female</label>
+            </div>
         </div>
-    </div>
+    </form>
 </dialog>
 
 <script is:inline>
+    const openStoryOptions = document.getElementById("storyOptionsButton");
+    const dialog = document.getElementById("storyOptions");
+
     const radioButtons = document.querySelectorAll('input[name="gender"]');
     const closeStoryOptions = document.getElementById("closeStoryOptions");
     const firstNameInput = document.getElementById("firstName");
     const lastNameInput = document.getElementById("lastName");
     const storedData = localStorage.getItem("storyData");
     const charaElements = document.querySelectorAll('[character="MC"]');
+
+    openStoryOptions.addEventListener("click", () => {
+        dialog.showModal();
+    });
+
+    closeStoryOptions.addEventListener("click", () => {
+        dialog.close();
+    });
 
     if (storedData) {
         const data = JSON.parse(storedData);
@@ -99,6 +116,6 @@ import { Icon } from "astro-icon/components";
         };
 
         localStorage.setItem("storyData", JSON.stringify(storyData));
-        document.getElementById("storyOptions").style.display = "none";
+        // document.getElementById("storyOptions").style.display = "none";
     });
 </script>

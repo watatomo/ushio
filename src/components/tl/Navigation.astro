@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    story?: string;
+    previous?: number;
+    next?: number;
+}
+
+const { story, previous, next } = Astro.props;
+---
+
+<nav class="story-nav">
+    {
+        previous ? (
+            <a href={`/tl/${story}/${previous}`}>
+                <button>
+                    <Icon name="chevron-left" />
+                </button>
+            </a>
+        ) : null
+    }
+    {
+        story ? (
+            <a href={`/tl/${story}`}>
+                <button>
+                    <Icon name="star" />
+                </button>
+            </a>
+        ) : null
+    }
+    {
+        next ? (
+            <a href={`/tl/${story}/${next}`}>
+                <button>
+                    <Icon name="chevron-right" />
+                </button>
+            </a>
+        ) : null
+    }
+</nav>
