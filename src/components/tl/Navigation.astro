@@ -11,31 +11,63 @@ const { story, previous, next } = Astro.props;
 ---
 
 <nav class="story-nav">
-    {
-        previous ? (
-            <a href={`/tl/${story}/${previous}`}>
-                <button>
-                    <Icon name="chevron-left" />
-                </button>
-            </a>
-        ) : null
-    }
-    {
-        story ? (
-            <a href={`/tl/${story}`}>
-                <button>
-                    <Icon name="star" />
-                </button>
-            </a>
-        ) : null
-    }
-    {
-        next ? (
-            <a href={`/tl/${story}/${next}`}>
-                <button>
-                    <Icon name="chevron-right" />
-                </button>
-            </a>
-        ) : null
-    }
+    <div>
+        {
+            previous ? (
+                <a href={`/tl/${story}/${previous}`}>
+                    <button>
+                        <Icon name="chevron-left" />
+                    </button>
+                </a>
+            ) : null
+        }
+        {
+            story ? (
+                <a href={`/tl/${story}`}>
+                    <button>
+                        <Icon name="star" />
+                    </button>
+                </a>
+            ) : null
+        }
+        {
+            next ? (
+                <a href={`/tl/${story}/${next}`}>
+                    <button>
+                        <Icon name="chevron-right" />
+                    </button>
+                </a>
+            ) : null
+        }
+    </div>
 </nav>
+
+<style lang="scss">
+    .story-nav {
+        z-index: 999;
+        position: fixed;
+        left: 50%;
+        bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > div {
+            background-color: var(--background-secondary);
+        }
+    }
+
+    a {
+        text-decoration: none;
+        cursor: default;
+    }
+
+    button {
+        background: none;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+</style>

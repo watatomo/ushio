@@ -11,12 +11,6 @@
     row-gap: 1px;
     font-size: var(--bubble-line-size);
     transition: 0.2s ease;
-    // -webkit-touch-callout: none;
-    // -webkit-user-select: none;
-    // -khtml-user-select: none;
-    // -moz-user-select: none;
-    // -ms-user-select: none;
-    // user-select: none;
 
     .lines {
         display: flex;
@@ -196,7 +190,6 @@
     grid-template-columns: auto 1fr;
     transition: grid-template 0.2s ease;
     grid-gap: 10px;
-    // gap: 10px;
 
     .lines {
         // display: flex;
@@ -204,6 +197,7 @@
         // grid-column: 2;
 
         p {
+            color: var(--bubble-text);
             margin: 0.75em 0;
             transition: transform 0.2s ease;
 
@@ -248,6 +242,7 @@
         );
 
         p {
+            color: var(--bubble-text);
             margin: 0;
         }
     }
@@ -353,11 +348,6 @@ button#storyOptionsButton {
 }
 
 // Navigation
-.story-nav {
-    z-index: 999;
-    position: fixed;
-    bottom: 20px;
-}
 
 // Phone
 

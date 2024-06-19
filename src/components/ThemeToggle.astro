@@ -7,10 +7,14 @@ import { Icon } from "astro-icon/components";
     <Icon name="moon" />
 </button>
 
-<style>
+<style lang="scss">
     #themeToggle {
         border: 0;
         background: none;
+
+        svg {
+            font-size: 2em;
+        }
     }
 
     [data-icon="sun"] {
@@ -21,11 +25,14 @@ import { Icon } from "astro-icon/components";
         display: none;
     }
 
-    :global(.dark) [data-icon="sun"] {
-        display: none;
-    }
-    :global(.dark) [data-icon="moon"] {
-        display: block;
+    :global(.dark) {
+        [data-icon="sun"] {
+            display: none;
+        }
+
+        [data-icon="moon"] {
+            display: block;
+        }
     }
 </style>
 
