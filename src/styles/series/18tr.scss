@@ -4,7 +4,7 @@
 
 @mixin characters($args...) {
     @each $name, $color in meta.keywords($args) {
-        [character="#{$name}"] {
+        [data-character="#{$name}"] {
             --color: #{$color};
             --hue: #{color.hue($color)};
             --icon: url("https://cdn.jsdelivr.net/gh/kagukura/img/icons/#{string.to-lower-case($name)}.png");

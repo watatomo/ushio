@@ -14,7 +14,7 @@ html {
     --bubble-line-color: var(--blockquote-color);
     --mode-transition: 0.2s ease;
 
-    [character] {
+    [data-character] {
         // catppuccin: hsl(var(--hue), 23%, 88%)
         --bubble-bg: hsl(var(--hue), 33%, 88%);
     }
@@ -23,7 +23,7 @@ html {
 html.dark {
     --bubble-bg-default: hsl(248deg, 15%, 20%);
 
-    [character] {
+    [data-character] {
         --bubble-bg: hsl(var(--hue), 25%, 20%);
     }
 }
