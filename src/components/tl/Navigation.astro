@@ -12,33 +12,40 @@ const { story, previous, next } = Astro.props;
 
 <nav class="story-nav">
     <div>
-        {
-            previous ? (
-                <a href={`/tl/${story}/${previous}`}>
-                    <button>
-                        <Icon name="chevron-left" />
-                    </button>
-                </a>
-            ) : null
-        }
+        <div class="previous">
+            {
+                previous ? (
+                    <a href={`/tl/${story}/${previous}/`}>
+                        <button>
+                            <Icon name="chevron-left" />
+                        </button>
+                    </a>
+                ) : null
+            }
+        </div>
+
         {
             story ? (
-                <a href={`/tl/${story}`}>
-                    <button>
-                        <Icon name="star" />
-                    </button>
-                </a>
+                <div class="index">
+                    <a href={`/tl/${story}/`}>
+                        <button>
+                            <Icon name="star" />
+                        </button>
+                    </a>
+                </div>
             ) : null
         }
-        {
-            next ? (
-                <a href={`/tl/${story}/${next}`}>
-                    <button>
-                        <Icon name="chevron-right" />
-                    </button>
-                </a>
-            ) : null
-        }
+        <div class="next">
+            {
+                next ? (
+                    <a href={`/tl/${story}/${next}/`}>
+                        <button>
+                            <Icon name="chevron-right" />
+                        </button>
+                    </a>
+                ) : null
+            }
+        </div>
     </div>
 </nav>
 
@@ -46,14 +53,30 @@ const { story, previous, next } = Astro.props;
     .story-nav {
         z-index: 999;
         position: fixed;
-        left: 50%;
+        width: 100%;
         bottom: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
 
         > div {
-            background-color: var(--background-secondary);
+            background-color: var(--background-tertiary);
+            // backdrop-filter: blur(12px);
+            filter: drop-shadow(0 0 4px var(--drop-shadow-color));
+            border-radius: 20px;
+            display: grid;
+            grid-template: 1fr / 50px 50px 50px;
+            justify-content: space-evenly;
+            align-items: center;
+            justify-items: center;
+
+            > div {
+                padding: 0.3em 0;
+            }
+        }
+
+        svg {
+            font-size: 28px;
         }
     }
 
@@ -65,9 +88,12 @@ const { story, previous, next } = Astro.props;
     button {
         background: none;
         border: none;
+        padding: 0.25em;
+        color: var(--text-primary);
 
         &:hover {
             cursor: pointer;
+            color: var(--text-tertiary);
         }
     }
 </style>

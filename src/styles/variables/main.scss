@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../palette/rose-pine/dawn.scss";
 @use "../palette/rose-pine/dark.scss";
 
@@ -10,6 +11,8 @@ html {
     --background-tertiary: #{dawn.$overlay};
     --accent-color: #{dawn.$rose};
     --blockquote-color: #{dawn.$highlight-high};
+
+    --drop-shadow-color: #{color.adjust(dawn.$text, $alpha: -0.5)};
 }
 
 html.dark {
