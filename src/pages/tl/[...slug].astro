@@ -1,6 +1,8 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import Translation from "../../layouts/Translation.astro";
+import StoryController from "@/components/tl/StoryController";
+import "styles/dialog.scss";
 
 export async function getStaticPaths() {
     const posts = await getCollection("tl");
@@ -16,5 +18,7 @@ const { Content } = await post.render();
 ---
 
 <Translation {...post.data}>
-    <Content />
+    <StoryController series="18TRIP" client:load>
+        <Content />
+    </StoryController>
 </Translation>

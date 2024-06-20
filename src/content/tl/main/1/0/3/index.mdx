@@ -9,9 +9,12 @@ next: 4
 ---
 
 import "styles/series/18tr.scss";
+import Name from "components/tl/Name";
 import Bubble from "components/tl/Bubble";
 import Box from "components/tl/Box.astro";
 import Location from "components/tl/Location.astro";
+
+<Name last client:only="react" />
 
 <Location name="Tokyo Metropolis International Airport - Lobby"/>
 
@@ -106,7 +109,7 @@ The bus will now depart. All passengers, please fasten your seatbelts.”
 </Bubble>
 
 <Bubble character="Daniel" unknown>
-Oh? Hamasaki, is that you?
+Oh? <Name last client:only="react" />, is that you?
 </Bubble>
 
 <Bubble character="MC">
