@@ -7,7 +7,6 @@
     grid-row-gap: 1px;
     column-gap: 12px;
     row-gap: 1px;
-    font-size: var(--bubble-line-size);
     transition: 0.2s ease;
 
     .lines {
@@ -19,7 +18,7 @@
             align-self: flex-start;
             background: var(--bubble-bg, var(--bubble-bg-default));
             color: var(--bubble-text);
-            padding: 0.65rem;
+            padding: 0.65em;
             margin: 0;
             border-radius: var(--bubble-line-border);
             position: relative;
@@ -117,7 +116,7 @@
 }
 
 .name {
-    font-size: 0.85rem;
+    font-size: 0.85em;
     line-height: 0.8;
     font-weight: bold;
     text-transform: var(--bubble-name-case);
