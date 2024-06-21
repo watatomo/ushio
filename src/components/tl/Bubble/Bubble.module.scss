@@ -1,6 +1,6 @@
 .bubble {
     display: grid;
-    margin: 1em 0;
+    margin: 1rem 0;
     grid-template-columns: auto 1fr;
     line-height: 1.2;
     grid-column-gap: 12px;
@@ -19,7 +19,7 @@
             align-self: flex-start;
             background: var(--bubble-bg, var(--bubble-bg-default));
             color: var(--bubble-text);
-            padding: 0.65em;
+            padding: 0.65rem;
             margin: 0;
             border-radius: var(--bubble-line-border);
             position: relative;
@@ -117,7 +117,7 @@
 }
 
 .name {
-    font-size: 0.85em;
+    font-size: 0.85rem;
     line-height: 0.8;
     font-weight: bold;
     text-transform: var(--bubble-name-case);

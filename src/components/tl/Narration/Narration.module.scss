@@ -12,7 +12,7 @@
 
         p {
             color: var(--bubble-text);
-            margin: 0.75em 0;
+            margin: 0.75rem 0;
             transition: transform 0.2s ease;
 
             &:hover {
@@ -23,7 +23,7 @@
 
     &::before {
         content: "";
-        height: 0.1em;
+        height: 0.1rem;
         width: var(--bubble-icon-size);
         display: block;
         border-bottom: solid var(--bubble-line-color) 1px;

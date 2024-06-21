@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+
+import StoryOptions from "../components/tl/StoryOptions.astro";
+import Navigation from "../components/tl/Navigation.astro";
+
+import "../styles/variables/tl.scss";
+import "../styles/tl/pages.scss";
+
+type Props = CollectionEntry<"tl">["data"];
+
+const { title, description, series, story } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} />
+        <style>
+            main {
+                width: calc(100% - 2em);
+                max-width: 100%;
+                margin: 0;
+            }
+
+            article {
+                width: 720px;
+                max-width: calc(100% - 2em);
+                margin: auto;
+                padding: 1em;
+            }
+
+            img {
+                margin: 1em 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <Header />
+        <main>
+            <article>
+                <slot />
+            </article>
+        </main>
+    </body>
+</html>

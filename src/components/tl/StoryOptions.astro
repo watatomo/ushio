@@ -106,7 +106,9 @@ import { Icon } from "astro-icon/components";
     closeStoryOptions.addEventListener("click", function () {
         const firstName = firstNameInput.value;
         const lastName = lastNameInput.value;
-        const selectedRadio = document.querySelector('input[name="gender"]:checked');
+        const selectedRadio = document.querySelector(
+            'input[name="gender"]:checked'
+        );
         const gender = selectedRadio.value;
 
         const storyData = {
@@ -132,7 +134,7 @@ import { Icon } from "astro-icon/components";
         bottom: 20px;
         right: 20px;
         border-radius: 50%;
-        padding: 0.72em;
+        padding: 0.72rem;
         background-color: var(--background-tertiary);
         filter: drop-shadow(0 0 4px var(--drop-shadow-color));
         color: var(--text-primary);
@@ -152,7 +154,7 @@ import { Icon } from "astro-icon/components";
         position: relative;
         background-color: var(--background-primary);
         border-radius: 8px;
-        max-width: 600px;
+        max-width: 60rem;
         color: var(--text-primary);
         padding: 2.25em;
 

@@ -13,7 +13,7 @@ import { Icon } from "astro-icon/components";
         background: none;
 
         svg {
-            font-size: 2em;
+            font-size: 28px;
         }
     }
 
@@ -37,8 +37,11 @@ import { Icon } from "astro-icon/components";
 </style>
 
 <script is:inline>
-    const theme = (() => {
-        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+    const threme = (() => {
+        if (
+            typeof localStorage !== "undefined" &&
+            localStorage.getItem("theme")
+        ) {
             return localStorage.getItem("theme");
         }
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -63,5 +66,7 @@ import { Icon } from "astro-icon/components";
         localStorage.setItem("theme", isDark ? "dark" : "light");
     };
 
-    document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
+    document
+        .getElementById("themeToggle")
+        .addEventListener("click", handleToggleClick);
 </script>

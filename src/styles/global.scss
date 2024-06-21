@@ -1,18 +1,6 @@
 @use "normalize.scss";
 @use "variables/main.scss";
 
-// :root {
-//     --accent-color: #1e66f5;
-//     --accent-color-dark: #0947c3;
-//     --black: 76, 79, 105;
-//     --gray: 108, 111, 133;
-//     --gray-light: 140, 143, 161;
-//     --gray-dark: 92, 95, 119;
-//     --gray-gradient: rgba(#eff1f5, 50%), #eff1f5;
-//     --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
-//         0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
-// }
-
 @font-face {
     font-family: "Atkinson";
     src: url("/fonts/atkinson-regular.woff") format("woff");
