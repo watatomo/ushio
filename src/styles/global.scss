@@ -2,23 +2,23 @@
 @use "variables/main.scss";
 
 @font-face {
-    font-family: "Atkinson";
-    src: url("/fonts/atkinson-regular.woff") format("woff");
-    font-weight: 400;
+    font-family: "Inter";
     font-style: normal;
+    font-weight: 100 900;
     font-display: swap;
+    src: url("/fonts/InterVariable.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: "Atkinson";
-    src: url("/fonts/atkinson-bold.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 100 900;
     font-display: swap;
+    src: url("/fonts/InterVariable-Italic.woff2") format("woff2");
 }
 
 body {
-    font-family: "Atkinson", sans-serif;
+    font-family: "Inter", sans-serif;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -38,35 +38,46 @@ main {
     padding: 3em 1em;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+svg {
+    font-size: inherit;
+    vertical-align: middle;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 0.5rem 0;
-    color: rgb(var(--text-primary));
-    line-height: 1.2;
-}
-
-h1 {
-    font-size: 3.052em;
-}
-
-h2 {
-    font-size: 2.441em;
-}
-
-h3 {
-    font-size: 1.953em;
-}
-
-h4 {
-    font-size: 1.563em;
-}
-
-h5 {
-    font-size: 1.25em;
+    overflow-wrap: break-word;
 }
 
 strong,
@@ -76,43 +87,20 @@ b {
 
 a {
     color: var(--accent-color);
-}
 
-a:hover {
-    color: var(--accent-color);
+    &:hover {
+        color: var(--accent-color);
+    }
 }
 
 p {
     margin-bottom: 1em;
 }
 
-.prose p {
-    margin-bottom: 2em;
-}
-
-textarea {
-    width: 100%;
-    font-size: 16px;
-}
-
-input {
-    font-size: 16px;
-}
-
-table {
-    width: 100%;
-}
-
 img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-}
-
-code {
-    padding: 2px 5px;
-    background-color: rgb(var(--gray-light));
-    border-radius: 2px;
 }
 
 pre {
@@ -124,25 +112,9 @@ pre > code {
     all: unset;
 }
 
-blockquote {
-    border-left: 4px solid var(--accent-color);
-    padding: 0 0 0 20px;
-    margin: 0px;
-    font-size: 1.333em;
-}
-
 hr {
     border: none;
     border-top: 1px solid rgb(var(--gray-light));
-}
-
-@media (max-width: 720px) {
-    body {
-        font-size: 16px;
-    }
-    main {
-        padding: 1em;
-    }
 }
 
 .sr-only {

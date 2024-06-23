@@ -24,4 +24,6 @@ html.dark {
     --background-tertiary: #{dark.$overlay};
     --accent-color: #{dark.$rose};
     --blockquote-color: #{dark.$highlight-high};
+
+    --drop-shadow-color: #{color.adjust(#000, $alpha: -0.5)};
 }

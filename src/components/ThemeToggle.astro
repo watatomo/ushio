@@ -11,10 +11,11 @@ import { Icon } from "astro-icon/components";
     #themeToggle {
         border: 0;
         background: none;
+        color: var(--text-primary);
+    }
 
-        svg {
-            font-size: 28px;
-        }
+    svg:hover {
+        cursor: pointer;
     }
 
     [data-icon="sun"] {
@@ -37,7 +38,26 @@ import { Icon } from "astro-icon/components";
 </style>
 
 <script is:inline>
-    const threme = (() => {
+    const disableAnimation = () => {
+        const css = document.createElement("style");
+        css.appendChild(
+            document.createTextNode(
+                `*,*::before,*::after{-webkit-transition:none!important;-moz-transition:none!important;-o-transition:none!important;-ms-transition:none!important;transition:none!important}`
+            )
+        );
+        document.head.appendChild(css);
+
+        return () => {
+            // Force restyle
+            (() => window.getComputedStyle(document.body))();
+
+            setTimeout(() => {
+                document.head.removeChild(css);
+            }, 1);
+        };
+    };
+
+    const theme = (() => {
         if (
             typeof localStorage !== "undefined" &&
             localStorage.getItem("theme")
@@ -57,6 +77,7 @@ import { Icon } from "astro-icon/components";
     }
 
     window.localStorage.setItem("theme", theme);
+    // disableAnimation();
 
     const handleToggleClick = () => {
         const element = document.documentElement;

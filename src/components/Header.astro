@@ -5,54 +5,46 @@ import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header>
-    <nav>
-        <h2><a href="/">{SITE_TITLE}</a></h2>
-        <div class="internal-links">
-            <HeaderLink href="/">Home</HeaderLink>
-            <HeaderLink href="/tl">Translations</HeaderLink>
-            <HeaderLink href="/about">About</HeaderLink>
-        </div>
-        <ThemeToggle />
+    <div class="site-title">
+        <a href="/tl/">{SITE_TITLE}</a>
+    </div>
+    <nav class="internal-links">
+        <!-- <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/tl">Translations</HeaderLink> -->
     </nav>
+    <div class="theme-toggle">
+        <ThemeToggle />
+    </div>
 </header>
-<style>
+
+<style lang="scss">
     header {
+        display: grid;
+        grid-template: 1fr / 1fr 1fr 1fr;
+        position: fixed;
+        width: 100%;
+        gap: 1em;
+        align-items: center;
+        height: auto;
         margin: 0;
-        padding: 0 1em;
-        background: white;
-        box-shadow: 0 2px 8px rgba(var(--black), 5%);
-    }
-    h2 {
-        margin: 0;
-        font-size: 1em;
+        padding: 0 0.9rem;
+        background: var(--background-secondary);
+        box-shadow: 0 2px 8px rgba(#000, 5%);
+        z-index: 999;
+        font-size: 1.2em;
     }
 
-    h2 a,
-    h2 a.active {
-        text-decoration: none;
-    }
+    div,
     nav {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        align-content: center;
     }
-    nav a {
-        padding: 1em 0.5em;
-        color: var(--black);
-        border-bottom: 4px solid transparent;
+
+    a {
         text-decoration: none;
     }
-    nav a.active {
-        text-decoration: none;
-        border-bottom-color: var(--accent);
-    }
-    .social-links,
-    .social-links a {
-        display: flex;
-    }
-    @media (max-width: 720px) {
-        .social-links {
-            display: none;
-        }
+
+    .theme-toggle {
+        justify-self: flex-end;
     }
 </style>

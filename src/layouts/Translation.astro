@@ -44,7 +44,11 @@ const { title, description, series, story, previous, next } = Astro.props;
                 <slot />
             </article>
         </main>
-        {story || previous || next ? <Navigation story={story} previous={previous} next={next} /> : null}
-        {series === "18tr" ? <StoryOptions /> : null}
+        {
+            story || previous || next ? (
+                <Navigation story={story} previous={previous} next={next} />
+            ) : null
+        }
+        <!-- {series === "18tr" ? <StoryOptions /> : null} -->
     </body>
 </html>
