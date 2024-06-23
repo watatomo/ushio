@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import Translation from "../../layouts/Translation.astro";
+import StoryPage from "../../layouts/StoryPage.astro";
 import StoryController from "@/components/tl/StoryController";
 import "styles/dialog.scss";
 
@@ -17,8 +17,8 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Translation {...post.data}>
+<StoryPage {...post.data}>
     <StoryController series="18TRIP" client:load>
         <Content />
     </StoryController>
-</Translation>
+</StoryPage>

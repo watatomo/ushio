@@ -13,6 +13,7 @@ import Bubble from "components/tl/Bubble";
 import Box from "components/tl/Box.astro";
 import Narration from "components/tl/Narration";
 import Location from "components/tl/Location.astro";
+import Flashback from "components/tl/Flashback.astro";
 import Diff from "components/tl/Diff.astro";
 
 <Narration>
@@ -281,7 +282,7 @@ The shumai here is really good.
 (...Now I remember. Back then was HAMA’s golden age, and everywhere was always crowded with people...)
 </Bubble>
 
-<Location name="Chinatown (Past)"/>
+<Flashback start />
 
 ![5](5.png)
 
@@ -303,7 +304,7 @@ Are you lost? Where are you trying to go? …Oh, that’s right by the station. 
 (If you compare what it was like then to now…)
 </Bubble>
 
-<Location name="Chinatown (Present)"/>
+<Flashback end />
 
 <Bubble character="MC">
 …Everything’s so different.

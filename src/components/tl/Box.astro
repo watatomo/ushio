@@ -15,7 +15,7 @@ const { type } = Astro.props;
         &.radio {
             background: rgba(#df8e1d, 18%);
             text-align: center;
-            padding: 0.75em;
+            padding: 1em;
             margin: 1em 1.5em;
             clip-path: polygon(
                 3% 0,
@@ -28,7 +28,7 @@ const { type } = Astro.props;
                 0 10%
             );
 
-            p {
+            :global(p) {
                 color: var(--bubble-text);
                 margin: 0;
             }

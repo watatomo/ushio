@@ -11,6 +11,7 @@ next: 8
 import "styles/series/18tr.scss";
 import Bubble from "components/tl/Bubble";
 import Location from "components/tl/Location.astro";
+import Flashback from "components/tl/Flashback.astro";
 
 <Location name="Landmark Plaza - First Floor"/>
 
@@ -98,7 +99,7 @@ So, you remember anything?
 Uh, well… I’m pretty sure that building had a bento shop on the first floor…
 </Bubble>
 
-<Location name="HAMA Ward 3 Building (Past)"/>
+<Flashback start />
 
 ![2](2.png)
 
@@ -146,7 +147,9 @@ Kafka…
 (I took Kafka’s hand and led him up the stairs at the side of the building…)
 </Bubble>
 
-<Location name="HAMA Ward 3 Building (Present)"/>
+<Flashback end />
+
+<Location name="HAMA Ward 3 Building"/>
 
 ![3](3.png)
 
