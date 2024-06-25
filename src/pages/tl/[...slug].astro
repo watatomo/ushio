@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import StoryPage from "../../layouts/StoryPage.astro";
+import ChapterPage from "../../layouts/ChapterPage.astro";
 import StoryController from "@/components/tl/StoryController";
 import "styles/dialog.scss";
 
@@ -17,8 +17,8 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<StoryPage {...post.data}>
+<ChapterPage {...post.data}>
     <StoryController series="18TRIP" client:load>
         <Content />
     </StoryController>
-</StoryPage>
+</ChapterPage>

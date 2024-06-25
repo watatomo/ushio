@@ -16,13 +16,13 @@
 
         p {
             align-self: flex-start;
-            background: var(--bubble-bg, var(--bubble-bg-default));
+            background-color: var(--bubble-bg, var(--bubble-bg-default));
             color: var(--bubble-text);
             padding: 0.65em;
             margin: 0;
             border-radius: var(--bubble-line-border);
             position: relative;
-            transition: 0.2s ease;
+            transition: transform 0.2s ease;
 
             t {
                 color: var(--bubble-text-thought);
@@ -37,7 +37,7 @@
             }
 
             &:nth-child(2) {
-                border-top-left-radius: 3px;
+                border-top-left-radius: 2px;
 
                 // &::before {
                 //     content: "";
@@ -158,11 +158,11 @@
     }
 
     .lines p {
-        background: var(--bubble-bg-default);
+        background-color: var(--bubble-bg-default);
 
-        &:nth-child(2)::before {
-            background: var(--bubble-bg-default);
-        }
+        // &:nth-child(2)::before {
+        //     background-color: var(--bubble-bg-default);
+        // }
     }
 }
 

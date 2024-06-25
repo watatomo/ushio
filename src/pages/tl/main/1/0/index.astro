@@ -14,32 +14,12 @@ const { title, description, series, story } = Astro.props;
 <html lang="en">
     <head>
         <BaseHead title={title} description={description} />
-        <style>
-            main {
-                width: calc(100% - 2em);
-                max-width: 100%;
-                margin: 0;
-            }
-
-            article {
-                width: 720px;
-                max-width: calc(100% - 2em);
-                margin: auto;
-                padding: 1em;
-            }
-
-            img {
-                margin: 1em 0;
-            }
-        </style>
     </head>
 
     <body>
         <Header />
         <main>
-            <article>
-                <slot />
-            </article>
+            <article>test</article>
         </main>
     </body>
 </html>

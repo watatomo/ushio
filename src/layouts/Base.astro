@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+
+import "../styles/variables/tl.scss";
+import "../styles/tl/pages.scss";
+
+type Props = CollectionEntry<"tl">["data"];
+
+const { title, description, series, story } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} />
+    </head>
+
+    <body>
+        <Header />
+        <slot />
+    </body>
+</html>
