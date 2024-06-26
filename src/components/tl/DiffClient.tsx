@@ -14,13 +14,8 @@ function DiffClient({ g, children }: Props) {
 
     const gFull = g === "f" ? "female" : "male";
 
-    if (gFull !== gender)
-        return (
-            <p data-gender={g} style={{ display: "none" }}>
-                {children}
-            </p>
-        );
-    return <p data-gender={g}>{children}</p>;
+    if (gFull !== gender) return null;
+    return children;
 }
 
 export default DiffClient;
