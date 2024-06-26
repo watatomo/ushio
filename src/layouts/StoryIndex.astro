@@ -1,24 +1,41 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 import BaseHead from "components/BaseHead.astro";
 import Header from "components/Header.astro";
 
 import "styles/variables/tl.scss";
 import "styles/tl/pages.scss";
 
-type Props = CollectionEntry<"tl">["data"];
-
-const { title, description, series, story } = Astro.props;
+const {
+    title,
+    titleOG,
+    description,
+    chapterTotal,
+    chapters,
+    series,
+    story,
+    banner,
+} = Astro.props;
 ---
 
 <html lang="en">
     <head>
         <BaseHead title={title} description={description} />
-        <style>
+        <style
+            lang="scss"
+            define:vars={{
+                storyBanner: `url(${banner.src})`,
+            }}
+        >
             main {
-                width: calc(100% - 2em);
-                max-width: 100%;
-                margin: 0;
+                display: grid;
+                /* grid-template-columns: 200px 1fr 300px; */
+                grid-template-columns: 1fr 500px;
+                grid-template-rows: auto 1fr;
+                gap: 1.2em;
+                margin: -25px 2.5em 0;
+                padding: 3em 0 0;
             }
 
             article {
@@ -28,18 +45,58 @@ const { title, description, series, story } = Astro.props;
                 padding: 1em;
             }
 
-            img {
-                margin: 1em 0;
+            .banner {
+                width: 100%;
+                height: 300px;
+                background: var(--storyBanner) no-repeat 50% 20% / cover
+                    var(--background-primary);
             }
         </style>
     </head>
 
     <body>
         <Header />
+        <div class="banner"></div>
         <main>
             <article>
-                <slot />
+                <section class="">
+                    <div class="title__wrapper">
+                        <h1 class="en">{title}</h1>
+                        {titleOG ? <h2 class="og">{titleOG}</h2> : null}
+                    </div>
+                    <slot />
+                </section>
             </article>
+            <nav>
+                <ul>
+                    {
+                        chapters?.map((section) => (
+                            <li key={JSON.stringify(section)}>
+                                {section.chapters?.map((chapter) =>
+                                    chapter.href ? (
+                                        chapter.none ? (
+                                            <a key={chapter} class="none">
+                                                {chapter.label}
+                                            </a>
+                                        ) : (
+                                            <a
+                                                key={chapter}
+                                                href={chapter.href}
+                                            >
+                                                {chapter.label}
+                                            </a>
+                                        )
+                                    ) : (
+                                        <span key={chapter}>
+                                            {chapter.name}
+                                        </span>
+                                    )
+                                )}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
         </main>
     </body>
 </html>

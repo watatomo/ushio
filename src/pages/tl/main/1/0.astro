@@ -1,0 +1,50 @@
+---
+import BaseHead from "components/BaseHead.astro";
+import StoryIndex from "@/layouts/StoryIndex.astro";
+
+import "styles/variables/tl.scss";
+import "styles/tl/pages.scss";
+
+const title = "Prologue: Still Blank";
+const description =
+    "The protagonist returns to their hometown of HAMA to see their childhood friend, Kafka, but it seems that he’s gone missing…";
+const series = "18trip";
+const chapterTotal = 8;
+
+const chapters = [
+    {
+        section: [
+            {
+                label: "My Sweet Hometown",
+                href: 1,
+            },
+            {
+                label: "Hospitality Beginnings SIDE:A",
+                href: 2,
+            },
+            {
+                label: "Hospitality Beginnings SIDE:B",
+                href: 3,
+            },
+        ],
+    },
+];
+
+import banner from "img/st/illust/006_01.jpg";
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} />
+    </head>
+
+    <StoryIndex
+        banner={banner}
+        title={title}
+        series={series}
+        chapterTotal={chapterTotal}
+        chapters={chapters}
+    >
+        {description}
+    </StoryIndex>
+</html>

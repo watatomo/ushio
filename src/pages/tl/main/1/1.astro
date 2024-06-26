@@ -1,0 +1,20 @@
+---
+import BaseHead from "components/BaseHead.astro";
+import StoryIndex from "@/layouts/StoryIndex.astro";
+
+import "styles/variables/tl.scss";
+import "styles/tl/pages.scss";
+
+const title = "Prologue: Still Blank";
+const description =
+    "Having agreed to revitalize HAMA-18’s tourism industry, the protagonist meets the current ward mayors, each with their own colorful personalities.";
+import banner from "img/st/illust/006_01.jpg";
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} />
+    </head>
+
+    <StoryIndex banner={banner}> {description} </StoryIndex>
+</html>
