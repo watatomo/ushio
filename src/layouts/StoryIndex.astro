@@ -81,9 +81,9 @@ const {
             <nav>
                 <ul>
                     {
-                        chapters?.map((section) => (
+                        chapters?.map(({ section }) => (
                             <li key={JSON.stringify(section)}>
-                                {section.chapters?.map((chapter) =>
+                                {section.map((chapter) =>
                                     chapter.href ? (
                                         chapter.none ? (
                                             <a key={chapter} class="none">

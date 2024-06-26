@@ -20,9 +20,11 @@ type StoryOptions =
 interface Subchapters {
     href: string;
     label: string;
+    none?: boolean;
+    name?: string;
 }
 
 interface Chapter {
     title: string;
-    subchapters: Subchapters[];
+    section: Subchapters[];
 }
