@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import StoryOptionsDialogue from "./StoryOptionsDialogue";
 
 interface Props {
     story?: string;
@@ -11,6 +12,7 @@ const { story, previous, next } = Astro.props;
 ---
 
 <nav class="story-nav">
+    <StoryOptionsDialogue client:only="react" />
     <div>
         <div class="previous">
             {
