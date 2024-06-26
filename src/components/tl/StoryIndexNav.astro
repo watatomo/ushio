@@ -1,4 +1,6 @@
 ---
+import StoryIndexChapterList from "./StoryIndexChapterList.astro";
+
 interface Props {
     chapterSections: Section[];
     slug: string;
@@ -7,49 +9,24 @@ interface Props {
 const { chapterSections, slug } = Astro.props;
 ---
 
+<style>
+    .section {
+        margin-bottom: 1rem;
+    }
+</style>
+
 <nav>
-    <ol>
+    <ol class="sections">
         {
             chapterSections?.map((section) => (
                 <li>
-                    {section.title ? (
-                        <>
-                            <span>{section.title}</span>
-                            <ol>
-                                {section.chapters.map((chapter) => (
-                                    <li>
-                                        <a
-                                            class:list={[
-                                                {
-                                                    none: chapter.none,
-                                                },
-                                            ]}
-                                            href={`/tl/${slug}/${chapter.href}`}
-                                        >
-                                            {chapter.label}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ol>
-                        </>
-                    ) : (
-                        <>
-                            {section.chapters.map((chapter) => (
-                                <li>
-                                    <a
-                                        class:list={[
-                                            {
-                                                none: chapter.none,
-                                            },
-                                        ]}
-                                        href={`/tl/${slug}/${chapter.href}`}
-                                    >
-                                        {chapter.label}
-                                    </a>
-                                </li>
-                            ))}
-                        </>
-                    )}
+                    <p>{section.title && <span>{section.title}</span>}</p>
+                    <ol>
+                        <StoryIndexChapterList
+                            slug={slug}
+                            chapters={section.chapters}
+                        />
+                    </ol>
                 </li>
             ))
         }
