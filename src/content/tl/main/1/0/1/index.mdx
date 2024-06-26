@@ -8,7 +8,7 @@ next: 2
 ---
 
 import "styles/series/18tr.scss";
-import Bubble from "components/tl/Bubble";
+import Bubble from "@/components/tl/Bubble/Bubble.astro";
 import Box from "components/tl/Box.astro";
 import Narration from "components/tl/Narration";
 import Location from "components/tl/Location.astro";
@@ -42,7 +42,7 @@ On the A-side are all the fun experiences, and on the B-side…are the tough tim
 We will soon be arriving at Tokyo Metropolis International Airport.
 </Box>
 
-<Bubble character="MC">
+<Bubble mc>
 …I can’t wait to see you again, Kafka.
 </Bubble>
 
@@ -50,7 +50,7 @@ We will soon be arriving at Tokyo Metropolis International Airport.
 Are you recording something with that? Those things haven’t been around in over five decades.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Oh, yeah. It’s a cassette tape.
 
 I think they were used a lot around the end of the 20th century…up until the 90s.
@@ -60,7 +60,7 @@ I think they were used a lot around the end of the 20th century…up until the 9
 I’ve heard they’ve been getting popular again lately. People call it “ret,” I think… I’ve been seeing that word around a lot. Are you a fan of ret things?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 I mean, I'm not super into it… but I do really like cassettes.
 </Bubble>
 
@@ -76,7 +76,7 @@ Hey! …Don’t…move already!
 HUH?! I’m…bad mood!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 (What’s going on… Are they arguing?)
 </Bubble>
 
@@ -85,11 +85,15 @@ HUH?! I’m…bad mood!
 <Bubble character="Kuguri" name="Seatmate">
 Good grief… They’re putting on quite the show.
 
-<Diff g="m">But it seems like I was able to have a wonderful flight sitting next to you. Thank you dearly, _fiú._</Diff>
-<Diff g="f">But it seems like I was able to have a wonderful flight sitting next to you. Thank you dearly, _lány._</Diff>
+<Diff g="m">
+But it seems like I was able to have a wonderful flight sitting next to you. Thank you dearly, _fiú._
+</Diff>
+<Diff g="f">
+But it seems like I was able to have a wonderful flight sitting next to you. Thank you dearly, _lány._
+</Diff>
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Oh, no, not at all… The pleasure’s all mine!
 </Bubble>
 
@@ -97,6 +101,6 @@ Oh, no, not at all… The pleasure’s all mine!
 Are you coming home to JPN from somewhere?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Yeah, I’m going back to my hometown. I live in HAMA-18.
 </Bubble>

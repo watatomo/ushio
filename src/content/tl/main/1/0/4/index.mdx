@@ -9,15 +9,26 @@ next: 5
 ---
 
 import "styles/series/18tr.scss";
-import Bubble from "components/tl/Bubble";
+import Bubble from "@/components/tl/Bubble/Bubble.astro";
 import Location from "components/tl/Location.astro";
 import Flashback from "components/tl/Flashback.astro";
 import Diff from "components/tl/Diff.astro";
 import Phone from "components/tl/Phone.astro";
+import Name from "components/tl/Name.astro";
 
 <Flashback start />
 
-<Bubble character="MC">
+<Bubble mc>
+test <Name  /> 
+</Bubble>
+<Bubble mc>
+test <Name first /> 
+</Bubble>
+<Bubble mc>
+test <Name last /> 
+</Bubble>
+
+<Bubble mc>
 You’ll catch a cold if we stay out here.
 </Bubble>
 
@@ -27,7 +38,7 @@ You’ll catch a cold if we stay out here.
 ……
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Come on, Kafka… Let’s go back inside.
 </Bubble>
 
@@ -35,7 +46,7 @@ Come on, Kafka… Let’s go back inside.
 …I don’t wanna.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 But… I don’t want you to get sick!
 </Bubble>
 
@@ -45,7 +56,7 @@ But… I don’t want you to get sick!
 That’s it… It takes everything I have just to go this far.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Kafka…
 
 But you know! When you get that surgery, you can go to so many more places!
@@ -57,7 +68,7 @@ Once you get better, you can go anywhere… We can go on fun trips and play toge
 The surgery success rate isn't 100%.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Does that mean… it might fail?
 </Bubble>
 
@@ -65,7 +76,7 @@ Does that mean… it might fail?
 …Either way, I can’t even get surgery until I get older.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Kafka…
 </Bubble>
 
@@ -75,7 +86,7 @@ I’m so jealous of you, MC-chan. You can go as far as you want, to anywhere you
 
 ![2](2.png)
 
-<Bubble character="MC">
+<Bubble mc>
 …Kafka. Let’s go on a trip together after the rain stops. Together.
 </Bubble>
 
@@ -83,7 +94,7 @@ I’m so jealous of you, MC-chan. You can go as far as you want, to anywhere you
 You want me to go with you?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Yeah. Just the two of us.
 </Bubble>
 
@@ -93,7 +104,7 @@ Yeah. Just the two of us.
 …MC-chan.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Hm?
 </Bubble>
 
@@ -101,7 +112,7 @@ Hm?
 Don’t let go of my hand, okay? Tell me you won’t let go…
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 I won’t.
 </Bubble>
 
@@ -109,7 +120,7 @@ I won’t.
 I mean it, okay? Even when… Even when they do my surgery…
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 I won’t ever let go. Never ever.
 </Bubble>
 
@@ -117,7 +128,7 @@ I won’t ever let go. Never ever.
 Promise?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 I promise!
 </Bubble>
 
@@ -125,7 +136,7 @@ I promise!
 
 <Location name="Oguro Hospital - Hallway"/>
 
-<Bubble character="MC">
+<Bubble mc>
 …I still remember that day.
 </Bubble>
 
@@ -151,7 +162,7 @@ I promise!
 </div>
 </Phone>
 
-<Bubble character="MC">
+<Bubble mc>
 He’s not responding…
 
 I guess I can assume that the surgery went well if Kafka himself is letting me know.
@@ -161,7 +172,7 @@ I guess I can assume that the surgery went well if Kafka himself is letting me k
 
 <Location name="Oguro Hospital - Room"/>
 
-<Bubble character="MC">
+<Bubble mc>
 Kaf—
 </Bubble>
 
@@ -171,7 +182,7 @@ Kaf—
 DON’T MOVE!!!! Stop right there!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Uwaa?!
 </Bubble>
 
@@ -179,7 +190,7 @@ Uwaa?!
 You mustn’t enter this room. It is said that many unsolved cases may or may not be the unfortunate result of overlooking evidence from the initial investigation.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 (Wait, it’s just Kafka’s butler…)
 
 Sakujiro-san? What do you mean… It’s just Kafka’s hospital room…
@@ -191,7 +202,7 @@ Did… Did something happen to Kafka…?!
 That is currently under investigation. I am terribly sorry, but I would prefer you stay there for the time being.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Uh… Okay?
 </Bubble>
 
@@ -199,7 +210,7 @@ Uh… Okay?
 I’m afraid I have no choice. Much like Icarus flying too close to the sun, we must not rely on artificial intelligence in excess, lest we risk the destruction of the human race. I did not want to stoop to this level, however…
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Is that another one of your weird gadgets?
 </Bubble>
 
@@ -211,7 +222,7 @@ Indubitably! This is the 777th gadget passed down through the Oguro family’s l
 It is a robot dog that keeps daily records of Young Master Kafka’s scent and uses the data to analyze the changes in his blood components to offer insight on what he’s been doing, what he’s been eating, even what he’s been hiding from us.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Does it do the… licky thing too?
 </Bubble>
 
@@ -223,7 +234,7 @@ This will conduct the search for us with the press of a button.
 Hm, it has picked something up! Young Master Kafka rose up out of his bed 36 minutes and 31 seconds ago and promptly changed out of his pajamas into day clothes.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Yeah, I can see his pajamas on the floor over here!
 </Bubble>
 
@@ -231,7 +242,7 @@ Yeah, I can see his pajamas on the floor over here!
 It seems as though he proceeded to turn around and consume one piece of chewing gum. Indeed, the bottle seems to be missing one piece compared to when I checked this morning.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 You can figure out that one’s missing just by the weight? Wow…
 
 (It’s kind of crazy how much he knows about Kafka…)
@@ -243,7 +254,7 @@ Young Master Kafka then put his hand on the door, and glanced right, left, and r
 Ahh, this is the exact method I taught him for crossing the street when he was a young boy.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 So Kafka was checking to make sure nobody would catch him leaving…?
 </Bubble>
 
@@ -253,7 +264,7 @@ According to Sniffy-Licky-Puppy, Young Master Kafka’s emotions at the time wer
 And at last, he takes a step out of his hospital room, starting on his right foot…!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 …(Gulp)…
 </Bubble>
 
@@ -261,7 +272,7 @@ And at last, he takes a step out of his hospital room, starting on his right foo
 ……
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 But where did he go…?
 </Bubble>
 
@@ -269,7 +280,7 @@ But where did he go…?
 That I do not know. Regrettably, Sniffy-Licky-Puppy cannot tell us that much.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 What? No…! It told us everything except the most important part?!
 </Bubble>
 
@@ -277,7 +288,7 @@ What? No…! It told us everything except the most important part?!
 However, we may safely assume that the best course of action is to find Young Master Kafka and bring him back posthaste.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 But we don’t know where he went… He shouldn’t be walking around outside right after having surgery…
 </Bubble>
 
@@ -285,7 +296,7 @@ But we don’t know where he went… He shouldn’t be walking around outside ri
 …Hm?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 He told me that they finished his surgery.
 </Bubble>
 
@@ -297,7 +308,7 @@ MC-san, if I may ask for your help. It seems as though…
 He left this letter, no… this tape for you.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 A cassette tape? And you’re sure this is Kafka’s?
 </Bubble>
 
@@ -307,7 +318,7 @@ Yes, it was left under his sheets.
 
 ![6](6.png)
 
-<Bubble character="MC">
+<Bubble mc>
 Oh, the date written on it…
 
 (It’s from 10 years ago, so it must be…)
@@ -317,7 +328,7 @@ Oh, the date written on it…
 
 ![5](5.png)
 
-<Bubble character="MC">
+<Bubble mc>
 Let’s go on a trip together after the rain stops. Together.
 </Bubble>
 
@@ -325,12 +336,12 @@ Let’s go on a trip together after the rain stops. Together.
 You want me to go with you?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Yeah. Just the two of us.
 </Bubble>
 
 <Flashback end />
 
-<Bubble character="MC">
+<Bubble mc>
 It’s from back then…
 </Bubble>

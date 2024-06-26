@@ -9,8 +9,8 @@ next: 4
 ---
 
 import "styles/series/18tr.scss";
-import Name from "components/tl/Name";
-import Bubble from "components/tl/Bubble";
+import Name from "@/components/tl/NameClient";
+import Bubble from "@/components/tl/Bubble/Bubble.astro";
 import Box from "components/tl/Box.astro";
 import Location from "components/tl/Location.astro";
 
@@ -18,7 +18,7 @@ import Location from "components/tl/Location.astro";
 
 <Location name="Tokyo Metropolis International Airport - Lobby"/>
 
-<Bubble character="MC">
+<Bubble mc>
 Phew… We did it.
 </Bubble>
 
@@ -32,7 +32,7 @@ I didn’t ask for your help!
 
 ![1](1.png)
 
-<Bubble character="MC">
+<Bubble mc>
 (I convinced Liguang to help us out somehow… I’m lucky that there were two ward mayors around to handle things.)
 
 Um, thank you so much for the help…!
@@ -48,7 +48,7 @@ Who cares about your time when it was a waste of mine!
 Dammit, slow down, Liguang! I told you not to walk in front—
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Hold on!
 </Bubble>
 
@@ -56,7 +56,7 @@ Hold on!
 Huh?! What else do you want?!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 No, my suitcase…!
 </Bubble>
 
@@ -64,7 +64,7 @@ No, my suitcase…!
 What do you want with my… Huh? Why do you have the same one…?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 The one you have is mine.
 </Bubble>
 
@@ -74,7 +74,7 @@ Ah…! It doesn’t have my Pup Pup Paradise charm on it…!
 D-Dammit! Why didn’t you tell me earlier?! I can’t be caught owning the same things as a commoner!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 (He keeps calling me that…)
 
 (Sigh…) He’s gone. At least I got my luggage back.
@@ -86,7 +86,7 @@ D-Dammit! Why didn’t you tell me earlier?! I can’t be caught owning the same
 The final bus bound for HAMA is about to depart. All passengers please make your way to bus stop 11.
 </Box>
 
-<Bubble character="MC">
+<Bubble mc>
 Oh no… I need to run!
 </Bubble>
 
@@ -94,7 +94,7 @@ Oh no… I need to run!
 
 ![2](2.png)
 
-<Bubble character="MC">
+<Bubble mc>
 Phew… I made it.
 </Bubble>
 
@@ -102,7 +102,7 @@ Phew… I made it.
 The bus will now depart. All passengers, please fasten your seatbelts.”
 </Box>
 
-<Bubble character="MC">
+<Bubble mc>
 (But still…)
 
 (This bus is so empty. I guess it is the last one of the day… but there used to be so many more people on here.)
@@ -112,7 +112,7 @@ The bus will now depart. All passengers, please fasten your seatbelts.”
 Oh? <Name last client:only="react" />, is that you?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Huh… Daniel-san?!
 </Bubble>
 
@@ -122,7 +122,7 @@ Huh… Daniel-san?!
 Yo, nice to see ya.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Same here. Are you heading the same way?
 </Bubble>
 
@@ -130,7 +130,7 @@ Same here. Are you heading the same way?
 Yeah. Crazy that buses to HAMA only run once every four hours. Waiting for this one tired me out more than the flight.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Ah, yeah… It would really suck if you missed it. The Tokyo one runs about as often as Yamanote line trains, lucky them.
 </Bubble>
 
@@ -140,7 +140,7 @@ Yeah, I’m not surprised, honestly. We both know what’s going on with the HAM
 Want some beer? The unemployed gotta stick together, you get me?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 You know… We’re not technically unemployed for another week.
 
 (Daniel-san and I both worked as tour guides at the same travel agency, but… Unfortunately, our company declared bankruptcy.)
@@ -150,7 +150,7 @@ You know… We’re not technically unemployed for another week.
 Well, at least we can toast to our final day on the clock.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 (Our final day… Yeah, both of us flew in today after giving our final tours with the company.)
 
 Daniel-san… What are you thinking of doing after the company goes down?
@@ -160,7 +160,7 @@ Daniel-san… What are you thinking of doing after the company goes down?
 Man, don’t get my mood down right at the end like that…
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Come on, the company won’t even end for another week.
 </Bubble>
 
@@ -170,7 +170,7 @@ Hahaha! Well, y’know, I’ll figure it out.
 What about you? Got anything lined up?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 I…
 
 (Being a tour guide was fun, and I really like traveling too. Plus…)
@@ -186,7 +186,7 @@ I…
 Hey, what’s up? Something on your mind?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 No, I’m good… I’ll try and figure things out, too.
 </Bubble>
 
@@ -194,7 +194,7 @@ No, I’m good… I’ll try and figure things out, too.
 Haha! That’s the spirit. We’ll just go wherever the wind takes us, right?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Uh, no. Unlike you, I would prefer to think things through.
 </Bubble>
 
@@ -202,7 +202,7 @@ Uh, no. Unlike you, I would prefer to think things through.
 That so? Well… Then I guess this just marks the end of one journey and the start of another.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Yeah… You’re right. That’s a good way of putting it.
 </Bubble>
 
@@ -210,7 +210,7 @@ Yeah… You’re right. That’s a good way of putting it.
 But, hey, keep your head in the game up until next week, and it’ll make things easier on me.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 …I have tomorrow off, you know.
 </Bubble>
 
@@ -218,7 +218,7 @@ But, hey, keep your head in the game up until next week, and it’ll make things
 Whaaat? Naaaah, come on, let’s do this together.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Good luck at work.
 
 (I get to see Kafka again tomorrow.)

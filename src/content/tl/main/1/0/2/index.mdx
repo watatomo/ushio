@@ -9,7 +9,7 @@ next: 3
 ---
 
 import "styles/series/18tr.scss";
-import Bubble from "components/tl/Bubble";
+import Bubble from "@/components/tl/Bubble/Bubble.astro";
 import Box from "components/tl/Box.astro";
 import Location from "components/tl/Location.astro";
 import Diff from "components/tl/Diff.astro";
@@ -22,7 +22,7 @@ import Diff from "components/tl/Diff.astro";
 Suspect Kitakata Raito has been arrested on charges of aggravated assault. Kitakata is an entrepreneur well known for starting the metaverse service known as “mahorava…”
 </Box>
 
-<Bubble character="MC">
+<Bubble mc>
 Phew… We finally landed.
 
 (I like traveling, but it feels so nice to be back home.)
@@ -38,7 +38,7 @@ Phew… We finally landed.
 Excuse me.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 I’m sorry. I wasn’t paying attention…
 </Bubble>
 
@@ -46,7 +46,7 @@ I’m sorry. I wasn’t paying attention…
 I’m sorry, too. You’re not hurt?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 No, I’m okay. Are you…?
 </Bubble>
 
@@ -54,7 +54,7 @@ No, I’m okay. Are you…?
 Yeah, I’m fine. Thanks.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 (He looked kind of familiar…)
 
 (Bump) Woah…!
@@ -84,7 +84,7 @@ You son of a…!
 Oh, there’s my luggage. Move!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 (I should get my suitcase too. How long is it gonna take? What time was my bus again…?)
 </Bubble>
 
@@ -166,7 +166,7 @@ We ask for your cooperation to confirm the details.
 …Those are rabbit pellets.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 (Pellets…? He has a pet rabbit?)
 </Bubble>
 
@@ -178,7 +178,7 @@ Haha! Go ahead and take your sweet time! I told you I’d be first out!
 Tch…
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 (They were at each other's throats in the plane too. They keep arguing about, uh… kind of childish things, though.)
 
 Oh, there’s my suitcase.
@@ -194,7 +194,7 @@ Hup… Oof.
 
 ![4](4.png)
 
-<Bubble character="MC">
+<Bubble mc>
 A little doggy keychain? This isn’t mine… Did I take someone else’s bag?!
 </Bubble>
 
@@ -220,7 +220,7 @@ Heh…
 Let’s roll—
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Excuse me!
 </Bubble>
 
@@ -228,16 +228,20 @@ Excuse me!
 Eep?!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Excuse me! Can I talk to you? You in the sunglasses!
 </Bubble>
 
 <Bubble character="Renga" name="Man with Red Hair">
-<Diff g="m">Wh… A-A fan? If he makes a fuss here… No, wait, I got this. We’re staying classy…</Diff>
-<Diff g="f">Wh… A-A fan? If she makes a fuss here… No, wait, I got this. We’re staying classy…</Diff>
+<Diff g="m">
+Wh… A-A fan? If he makes a fuss here… No, wait, I got this. We’re staying classy…
+</Diff>
+<Diff g="f">
+Wh… A-A fan? If she makes a fuss here… No, wait, I got this. We’re staying classy…
+</Diff>
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Um, that suitcase is…!
 </Bubble>
 
@@ -245,18 +249,22 @@ Um, that suitcase is…!
 Ahem… Sorry to say, but I’m on a private schedule.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 What? No wait, I just need the suitcase…
 </Bubble>
 
 <Bubble character="Renga" name="Man with Red Hair">
-<Diff g="m">(He’s still going… I really gotta pull out the big guns against these crazy types of fans.)</Diff>
-<Diff g="f">(She’s still going… I really gotta pull out the big guns against these crazy types of fans.)</Diff>
+<Diff g="m">
+(He’s still going… I really gotta pull out the big guns against these crazy types of fans.)
+</Diff>
+<Diff g="f">
+(She’s still going… I really gotta pull out the big guns against these crazy types of fans.)
+</Diff>
 
 (Activating my Secret Technique: Paparazzi-Evading Speedwalk!)
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Wait! Hold on!
 </Bubble>
 
@@ -266,7 +274,7 @@ H-hey…!
 Let go! Back up, commoner!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 C-commoner…?!
 </Bubble>
 
@@ -274,7 +282,7 @@ C-commoner…?!
 Who gave a commoner like you the permission to touch an A-list celebrity?!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 No, I mean, I just…
 
 (Wait… Is he…?)
@@ -288,7 +296,7 @@ Wait, is that Renga…?
 No way, what’s he doing here?!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 (I was right… He’s Nishizono Renga, the famous model who’s the mayor of one of the HAMA wards… He runs Ward 3, right?)
 
 (Oh, and…)
@@ -312,7 +320,7 @@ Shit, now everything’s a mess…
 Hey, you! You’re the one who caused all this! What’s your problem?!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 No, I just wanted to tell you about my suitcase…
 </Bubble>
 
@@ -332,7 +340,7 @@ I’m so jealous!
 Rengaaaaa!!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Huh?! Wait…!
 </Bubble>
 
@@ -356,7 +364,7 @@ Look at alla these people… You reckon everyone’s here linin’ up for them s
 My, it’s so crowded… City folk really have it different.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 (O-oh no… Everyone’s crowding around us.)
 </Bubble>
 
@@ -376,7 +384,7 @@ Wow, Nishizono Renga’s kind of an asshole.
 This line ain’t movin’ at all. Cashiers these days can’t even get the job done right.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 (This isn’t good. Things aren’t calming down.)
 </Bubble>
 
@@ -388,7 +396,7 @@ No wonder HAMA is doomed to fail.
 How boring. Let’s go.
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 (People are even badmouthing HAMA…! I can’t let my hometown’s reputation go down like this…)
 </Bubble>
 
@@ -396,7 +404,7 @@ How boring. Let’s go.
 Gahhhh fuck!! What the hell do I do now?!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Wait, please just hear me out!!
 </Bubble>
 
@@ -404,7 +412,7 @@ Wait, please just hear me out!!
 What do you want…!
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 I can help you!
 </Bubble>
 
@@ -418,7 +426,7 @@ Huh?! You want to help…?
 …What’s happening here?
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Ah, perfect timing! Can you help us, too?
 </Bubble>
 
@@ -426,6 +434,6 @@ Ah, perfect timing! Can you help us, too?
 Help? With what exactly…
 </Bubble>
 
-<Bubble character="MC">
+<Bubble mc>
 Help with… offering hospitality!
 </Bubble>
