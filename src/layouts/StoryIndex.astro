@@ -7,6 +7,17 @@ import Header from "components/Header.astro";
 import "styles/variables/tl.scss";
 import "styles/tl/pages.scss";
 
+interface Props {
+    title: string;
+    titleOG?: string;
+    description: string;
+    chapterTotal: number;
+    chapters: Chapter[];
+    series: string;
+    story: string;
+    banner: typeof Image;
+}
+
 const {
     title,
     titleOG,

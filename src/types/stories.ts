@@ -16,3 +16,13 @@ type StoryOptions =
           series: "prsk";
           options: never;
       };
+
+interface Subchapters {
+    href: string;
+    label: string;
+}
+
+interface Chapter {
+    title: string;
+    subchapters: Subchapters[];
+}
