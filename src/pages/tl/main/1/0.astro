@@ -4,16 +4,16 @@ import StoryIndex from "@/layouts/StoryIndex.astro";
 
 import "styles/variables/tl.scss";
 import "styles/tl/pages.scss";
+import "styles/series/18tr.scss";
 
 const title = "Prologue: Still Blank";
 const description =
     "The protagonist returns to their hometown of HAMA to see their childhood friend, Kafka, but it seems that he’s gone missing…";
-const series = "18trip";
+const slug = "main/1/0";
 const chapterTotal = 8;
 
 const chapterSections = [
     {
-        title: "Section1", // optional
         chapters: [
             {
                 label: "My Sweet Hometown",
@@ -42,10 +42,9 @@ import banner from "img/st/illust/006_01.jpg";
     <StoryIndex
         banner={banner}
         title={title}
-        series={series}
         chapterTotal={chapterTotal}
         chapterSections={chapterSections}
-    >
-        {description}
-    </StoryIndex>
+        description={description}
+        slug={slug}
+    />
 </html>

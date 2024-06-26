@@ -4,6 +4,8 @@ import { Image } from "astro:assets";
 import BaseHead from "components/BaseHead.astro";
 import Header from "components/Header.astro";
 
+import StoryIndexNav from "@/components/tl/StoryIndexNav.astro";
+
 import "styles/variables/tl.scss";
 import "styles/tl/pages.scss";
 
@@ -13,9 +15,8 @@ interface Props {
     description: string;
     chapterTotal: number;
     chapterSections: Section[];
-    series: string;
-    story: string;
-    banner: typeof Image;
+    banner: ImageMetadata;
+    slug: string;
 }
 
 const {
@@ -24,8 +25,7 @@ const {
     description,
     chapterTotal,
     chapterSections,
-    series,
-    story,
+    slug,
     banner,
 } = Astro.props;
 ---
@@ -78,26 +78,7 @@ const {
                     <slot />
                 </section>
             </article>
-            <nav>
-                <ul>
-                    {
-                        chapterSections?.map((section) => (
-                            <li>
-                                {section.title && <span>{section.title}</span>}
-                                {section.chapters.map((chapter) =>
-                                    chapter.none ? (
-                                        <a class="none">{chapter.label}</a>
-                                    ) : (
-                                        <a href={chapter.href}>
-                                            {chapter.label}
-                                        </a>
-                                    )
-                                )}
-                            </li>
-                        ))
-                    }
-                </ul>
-            </nav>
+            <StoryIndexNav chapterSections={chapterSections} slug={slug} />
         </main>
     </body>
 </html>

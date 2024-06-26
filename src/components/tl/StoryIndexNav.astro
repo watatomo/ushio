@@ -1,0 +1,57 @@
+---
+interface Props {
+    chapterSections: Section[];
+    slug: string;
+}
+
+const { chapterSections, slug } = Astro.props;
+---
+
+<nav>
+    <ol>
+        {
+            chapterSections?.map((section) => (
+                <li>
+                    {section.title ? (
+                        <>
+                            <span>{section.title}</span>
+                            <ol>
+                                {section.chapters.map((chapter) => (
+                                    <li>
+                                        <a
+                                            class:list={[
+                                                {
+                                                    none: chapter.none,
+                                                },
+                                            ]}
+                                            href={`/tl/${slug}/${chapter.href}`}
+                                        >
+                                            {chapter.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ol>
+                        </>
+                    ) : (
+                        <>
+                            {section.chapters.map((chapter) => (
+                                <li>
+                                    <a
+                                        class:list={[
+                                            {
+                                                none: chapter.none,
+                                            },
+                                        ]}
+                                        href={`/tl/${slug}/${chapter.href}`}
+                                    >
+                                        {chapter.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </>
+                    )}
+                </li>
+            ))
+        }
+    </ol>
+</nav>

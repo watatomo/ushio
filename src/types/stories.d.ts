@@ -18,13 +18,13 @@ type StoryOptions =
       };
 
 interface Chapters {
-    href: string;
+    href: string | number;
     label: string;
     none?: boolean;
     name?: string;
 }
 
 interface Section {
-    title: string;
+    title?: string;
     chapters: Chapters[];
 }

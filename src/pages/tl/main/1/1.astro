@@ -4,10 +4,51 @@ import StoryIndex from "@/layouts/StoryIndex.astro";
 
 import "styles/variables/tl.scss";
 import "styles/tl/pages.scss";
+import "styles/series/18tr.scss";
 
-const title = "Prologue: Still Blank";
+const title = "001: Sun Will R1ze!";
 const description =
     "Having agreed to revitalize HAMA-18’s tourism industry, the protagonist meets the current ward mayors, each with their own colorful personalities.";
+const slug = "main/1/1";
+const chapterTotal = 47;
+
+const chapterSections = [
+    {
+        title: "Section1", // optional
+        chapters: [
+            {
+                label: "My Sweet Hometown",
+                href: 1,
+            },
+            {
+                label: "Hospitality Beginnings SIDE:A",
+                href: 2,
+            },
+            {
+                label: "Hospitality Beginnings SIDE:B",
+                href: 3,
+            },
+        ],
+    },
+    {
+        title: "Section2", // optional
+        chapters: [
+            {
+                label: "My Sweet Hometown",
+                href: 1,
+            },
+            {
+                label: "Hospitality Beginnings SIDE:A",
+                href: 2,
+            },
+            {
+                label: "Hospitality Beginnings SIDE:B",
+                href: 3,
+            },
+        ],
+    },
+];
+
 import banner from "img/st/illust/006_01.jpg";
 ---
 
@@ -16,5 +57,12 @@ import banner from "img/st/illust/006_01.jpg";
         <BaseHead title={title} description={description} />
     </head>
 
-    <StoryIndex banner={banner}> {description} </StoryIndex>
+    <StoryIndex
+        banner={banner}
+        title={title}
+        chapterTotal={chapterTotal}
+        chapterSections={chapterSections}
+        description={description}
+        slug={slug}
+    />
 </html>
