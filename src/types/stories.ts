@@ -17,14 +17,14 @@ type StoryOptions =
           options: never;
       };
 
-interface Subchapters {
+interface Chapters {
     href: string;
     label: string;
     none?: boolean;
     name?: string;
 }
 
-interface Chapter {
+interface Section {
     title: string;
-    section: Subchapters[];
+    chapters: Chapters[];
 }

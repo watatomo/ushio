@@ -12,7 +12,7 @@ interface Props {
     titleOG?: string;
     description: string;
     chapterTotal: number;
-    chapters: Chapter[];
+    chapterSections: Section[];
     series: string;
     story: string;
     banner: typeof Image;
@@ -23,7 +23,7 @@ const {
     titleOG,
     description,
     chapterTotal,
-    chapters,
+    chapterSections,
     series,
     story,
     banner,
@@ -81,26 +81,16 @@ const {
             <nav>
                 <ul>
                     {
-                        chapters?.map(({ section }) => (
-                            <li key={JSON.stringify(section)}>
-                                {section.map((chapter) =>
-                                    chapter.href ? (
-                                        chapter.none ? (
-                                            <a key={chapter} class="none">
-                                                {chapter.label}
-                                            </a>
-                                        ) : (
-                                            <a
-                                                key={chapter}
-                                                href={chapter.href}
-                                            >
-                                                {chapter.label}
-                                            </a>
-                                        )
+                        chapterSections?.map((section) => (
+                            <li>
+                                {section.title && <span>{section.title}</span>}
+                                {section.chapters.map((chapter) =>
+                                    chapter.none ? (
+                                        <a class="none">{chapter.label}</a>
                                     ) : (
-                                        <span key={chapter}>
-                                            {chapter.name}
-                                        </span>
+                                        <a href={chapter.href}>
+                                            {chapter.label}
+                                        </a>
                                     )
                                 )}
                             </li>

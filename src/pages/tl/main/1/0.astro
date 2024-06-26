@@ -11,9 +11,10 @@ const description =
 const series = "18trip";
 const chapterTotal = 8;
 
-const chapters = [
+const chapterSections = [
     {
-        section: [
+        title: "Section1", // optional
+        chapters: [
             {
                 label: "My Sweet Hometown",
                 href: 1,
@@ -43,7 +44,7 @@ import banner from "img/st/illust/006_01.jpg";
         title={title}
         series={series}
         chapterTotal={chapterTotal}
-        chapters={chapters}
+        chapterSections={chapterSections}
     >
         {description}
     </StoryIndex>
