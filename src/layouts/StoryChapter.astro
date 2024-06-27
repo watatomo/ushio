@@ -1,13 +1,12 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import BaseHead from "@/components/BaseHead.astro";
+import Header from "@/components/Header.astro";
 
-// import StoryOptions from "../components/tl/StoryOptions.astro";
-import Navigation from "../components/tl/Navigation.astro";
+import Navigation from "@/components/tl/chapter/Navigation.astro";
 
-import "../styles/variables/tl.scss";
-import "../styles/tl/pages.scss";
+import "@/styles/variables/tl.scss";
+import "@/styles/tl/pages.scss";
 
 type Props = CollectionEntry<"tl">["data"];
 
@@ -49,6 +48,5 @@ const { title, description, series, story, previous, next } = Astro.props;
                 <Navigation story={story} previous={previous} next={next} />
             ) : null
         }
-        <!-- {series === "18tr" ? <StoryOptions /> : null} -->
     </body>
 </html>

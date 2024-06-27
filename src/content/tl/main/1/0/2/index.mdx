@@ -8,11 +8,11 @@ previous: 1
 next: 3
 ---
 
-import "styles/series/18tr.scss";
-import Bubble from "@/components/tl/Bubble/Bubble.astro";
-import Box from "components/tl/Box.astro";
-import Location from "components/tl/Location.astro";
-import Diff from "components/tl/Diff.astro";
+import "@/styles/series/18tr.scss";
+import Bubble from "@/components/tl/chapter/Bubble/Bubble.astro";
+import Box from "@/components/tl/chapter/Box.astro";
+import Location from "@/components/tl/chapter/Location.astro";
+import Diff from "@/components/tl/chapter/Diff/Diff.astro";
 
 <Location name="Tokyo Metropolis International Airport - Baggage Claim"/>
 
@@ -60,7 +60,7 @@ Yeah, I’m fine. Thanks.
 (Bump) Woah…!
 </Bubble>
 
-![3](3.png)
+![3](@/img/st/illust/001_01.jpg)
 
 <Bubble character="Renga" name="Man with Red Hair">
 Slow down! Who said you could walk in front of me?!
@@ -192,7 +192,7 @@ Hup… Oof.
 …Huh?
 </Bubble>
 
-![4](4.png)
+![4](@/img/st/obj/132.webp)
 
 <Bubble mc>
 A little doggy keychain? This isn’t mine… Did I take someone else’s bag?!

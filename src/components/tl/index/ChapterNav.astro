@@ -1,0 +1,35 @@
+---
+import ChapterLink from "./ChapterLink.astro";
+
+interface Props {
+    chapterSections: Section[];
+    slug: string;
+}
+
+const { chapterSections, slug } = Astro.props;
+---
+
+<style>
+    .section {
+        margin-bottom: 1rem;
+    }
+</style>
+
+<nav>
+    <ol class="sections">
+        {
+            chapterSections?.map((section) => (
+                <>
+                    {section.title ? (
+                        <li><span>{section.title}</span></li>
+                        <ol>
+                            <ChapterLink slug={slug} chapters={section.chapters} />
+                        </ol>
+                    ) : (
+                        <ChapterLink slug={slug} chapters={section.chapters} />
+                    )}
+                </>
+            ))
+        }
+    </ol>
+</nav>

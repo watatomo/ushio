@@ -7,8 +7,8 @@
         [data-character="#{$name}"] {
             --color: #{$color};
             --hue: #{color.hue($color)};
-            --icon: url("https://cdn.jsdelivr.net/gh/kagukura/img/icons/#{string.to-lower-case($name)}.png");
-            --msg-icon: url("https://cdn.jsdelivr.net/gh/kagukura/img/msg_icons/#{string.to-lower-case($name)}.png");
+            --icon: url("https://cdn.jsdelivr.net/gh/kagukura/img/icons/#{string.to-lower-case($name)}.webp");
+            --msg-icon: url("https://cdn.jsdelivr.net/gh/kagukura/img/msg_icons/#{string.to-lower-case($name)}.webp");
         }
     }
 }

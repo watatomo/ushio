@@ -1,13 +1,13 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { Image } from "astro:assets";
-import BaseHead from "components/BaseHead.astro";
-import Header from "components/Header.astro";
+// import type { CollectionEntry } from "astro:content";
+// import { Image } from "astro:assets";
+import BaseHead from "@/components/BaseHead.astro";
+import Header from "@/components/Header.astro";
 
-import StoryIndexNav from "@/components/tl/StoryIndexNav.astro";
+import ChapterNav from "@/components/tl/index/ChapterNav.astro";
 
-import "styles/variables/tl.scss";
-import "styles/tl/pages.scss";
+import "@/styles/variables/tl.scss";
+import "@/styles/tl/pages.scss";
 
 interface Props {
     title: string;
@@ -16,6 +16,7 @@ interface Props {
     chapterTotal: number;
     chapterSections: Section[];
     banner: ImageMetadata;
+    bannerPosition: string;
     slug: string;
 }
 
@@ -27,6 +28,7 @@ const {
     chapterSections,
     slug,
     banner,
+    bannerPosition,
 } = Astro.props;
 ---
 
@@ -37,30 +39,35 @@ const {
             lang="scss"
             define:vars={{
                 storyBanner: `url(${banner.src})`,
+                bannerPosition: `${bannerPosition}`,
             }}
         >
+            .main__wrapper {
+                display: flex;
+                width: 100%;
+                align-content: center;
+                justify-content: center;
+            }
+
             main {
                 display: grid;
+                justify-self: center;
+                max-width: 1140px;
                 /* grid-template-columns: 200px 1fr 300px; */
-                grid-template-columns: 1fr 500px;
-                grid-template-rows: auto 1fr;
-                gap: 1.2em;
-                margin: -25px 2.5em 0;
-                padding: 3em 0 0;
+                grid-template-columns: 1fr 300px;
+                /* grid-template-rows: auto 1fr; */
+                gap: 25px;
+                margin: 20px 80px;
             }
 
             article {
-                width: 720px;
-                max-width: calc(100% - 2em);
-                margin: auto;
-                padding: 1em;
             }
 
             .banner {
                 width: 100%;
-                height: 300px;
-                background: var(--storyBanner) no-repeat 50% 20% / cover
-                    var(--background-primary);
+                height: 250px;
+                background: var(--storyBanner) no-repeat var(--bannerPosition) /
+                    cover var(--background-primary);
             }
         </style>
     </head>
@@ -68,17 +75,20 @@ const {
     <body>
         <Header />
         <div class="banner"></div>
-        <main>
-            <article>
-                <section class="">
-                    <div class="title__wrapper">
-                        <h1 class="en">{title}</h1>
-                        {titleOG ? <h2 class="og">{titleOG}</h2> : null}
-                    </div>
-                    <slot />
-                </section>
-            </article>
-            <StoryIndexNav chapterSections={chapterSections} slug={slug} />
-        </main>
+        <div class="main__wrapper">
+            <main>
+                <article>
+                    <section class="">
+                        <div class="title__wrapper">
+                            <h1 class="en">{title}</h1>
+                            {titleOG && <h2 class="og">{titleOG}</h2>}
+                        </div>
+                        {description}
+                        <slot />
+                    </section>
+                </article>
+                <ChapterNav chapterSections={chapterSections} slug={slug} />
+            </main>
+        </div>
     </body>
 </html>

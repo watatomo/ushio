@@ -12,7 +12,7 @@ interface StoryOptions extends StoryOptions18TRIP {}
 
 interface Chapters {
     href: string | number;
-    label: string;
+    label: string | number;
     none?: boolean;
     name?: string;
 }
