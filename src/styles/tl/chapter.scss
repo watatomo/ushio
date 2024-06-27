@@ -1,6 +1,19 @@
-// Box
+main {
+    width: calc(100% - 2em);
+    max-width: 100%;
+    margin: 0;
+}
 
-// Location
+article {
+    width: 720px;
+    max-width: calc(100% - 2em);
+    margin: auto;
+    padding: 1em 1em 3em;
+}
+
+img {
+    margin: 1em 0;
+}
 
 .location,
 .flashback {

@@ -3,7 +3,7 @@ import BaseHead from "components/BaseHead.astro";
 import StoryIndex from "@/layouts/StoryIndex.astro";
 
 import "styles/variables/tl.scss";
-import "styles/tl/pages.scss";
+import "styles/tl/index.scss";
 import "styles/series/18tr.scss";
 
 const title = "Voyage with You";
@@ -16,6 +16,7 @@ Yukikaze ends up being overprotective and gets into an argument with Kafka. On t
 `;
 const slug = "voyage_with_you";
 const chapterTotal = 8;
+const storyTheme = "foam";
 
 const chapterSections: Section[] = [
     {
@@ -90,5 +91,6 @@ const bannerPosition = "50% 5%";
         chapterSections={chapterSections}
         description={description}
         slug={slug}
+        storyTheme={storyTheme}
     />
 </html>

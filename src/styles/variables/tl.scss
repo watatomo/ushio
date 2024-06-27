@@ -1,3 +1,7 @@
+@use "sass:color";
+@use "../palette/rose-pine/dawn.scss";
+@use "../palette/rose-pine/dark.scss";
+
 html {
     --bubble-text: var(--text-primary);
     --bubble-text-thought: var(--text-secondary);
@@ -17,6 +21,11 @@ html {
         // catppuccin: hsl(var(--hue), 23%, 88%)
         --bubble-bg: hsl(var(--hue), 33%, 88%);
     }
+
+    [data-story-theme="foam"] {
+        --si-color: #{dawn.$foam};
+        --si-bg-primary: #{fade-out(dawn.$foam, 0.8)};
+    }
 }
 
 html.dark {
@@ -25,5 +34,10 @@ html.dark {
 
     [data-character] {
         --bubble-bg: hsl(var(--hue), 25%, 20%);
+    }
+
+    [data-story-theme="foam"] {
+        --si-color: #{dark.$foam};
+        --si-bg-primary: #{fade-out(dark.$foam, 0.8)};
     }
 }

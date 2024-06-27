@@ -3,7 +3,7 @@ import BaseHead from "components/BaseHead.astro";
 import StoryIndex from "@/layouts/StoryIndex.astro";
 
 import "styles/variables/tl.scss";
-import "styles/tl/pages.scss";
+import "styles/tl/index.scss";
 import "styles/series/18tr.scss";
 
 const title = "Prologue: Still Blank";
@@ -53,6 +53,7 @@ const chapterSections: Section[] = [
 ];
 
 import banner from "img/st/illust/006_01.jpg";
+const bannerPosition = "50% 30%";
 ---
 
 <html lang="en">
@@ -62,6 +63,7 @@ import banner from "img/st/illust/006_01.jpg";
 
     <StoryIndex
         banner={banner}
+        bannerPosition={bannerPosition}
         title={title}
         chapterTotal={chapterTotal}
         chapterSections={chapterSections}

@@ -3,7 +3,7 @@ import BaseHead from "components/BaseHead.astro";
 import StoryIndex from "@/layouts/StoryIndex.astro";
 
 import "styles/variables/tl.scss";
-import "styles/tl/pages.scss";
+import "styles/tl/index.scss";
 import "styles/series/18tr.scss";
 
 const title = "001: Sun Will R1ze!";
@@ -11,22 +11,43 @@ const description =
     "Having agreed to revitalize HAMA-18’s tourism industry, the protagonist meets the current ward mayors, each with their own colorful personalities.";
 const slug = "main/1/1";
 const chapterTotal = 47;
+const storyTheme = "foam";
 
 const chapterSections = [
     {
         title: "Section1", // optional
         chapters: [
             {
-                label: "My Sweet Hometown",
+                label: 1,
                 href: 1,
             },
             {
-                label: "Hospitality Beginnings SIDE:A",
+                label: 2,
                 href: 2,
             },
             {
-                label: "Hospitality Beginnings SIDE:B",
+                label: 3,
                 href: 3,
+            },
+            {
+                label: 4,
+                href: 4,
+            },
+            {
+                label: 5,
+                href: 5,
+            },
+            {
+                label: 6,
+                href: 6,
+            },
+            {
+                label: 7,
+                href: 7,
+            },
+            {
+                label: 8,
+                href: 8,
             },
         ],
     },
@@ -34,22 +55,27 @@ const chapterSections = [
         title: "Section2", // optional
         chapters: [
             {
-                label: "My Sweet Hometown",
+                label: 1,
                 href: 1,
             },
             {
-                label: "Hospitality Beginnings SIDE:A",
+                label: 2,
                 href: 2,
             },
             {
-                label: "Hospitality Beginnings SIDE:B",
+                label: 3,
                 href: 3,
+            },
+            {
+                label: 4,
+                href: 4,
             },
         ],
     },
 ];
 
-import banner from "img/st/illust/006_01.jpg";
+import banner from "img/st/illust/012_01.jpg";
+const bannerPosition = "50% 32%";
 ---
 
 <html lang="en">
@@ -59,10 +85,12 @@ import banner from "img/st/illust/006_01.jpg";
 
     <StoryIndex
         banner={banner}
+        bannerPosition={bannerPosition}
         title={title}
         chapterTotal={chapterTotal}
         chapterSections={chapterSections}
         description={description}
         slug={slug}
+        storyTheme={storyTheme}
     />
 </html>

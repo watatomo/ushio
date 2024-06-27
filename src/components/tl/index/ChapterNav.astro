@@ -9,20 +9,14 @@ interface Props {
 const { chapterSections, slug } = Astro.props;
 ---
 
-<style>
-    .section {
-        margin-bottom: 1rem;
-    }
-</style>
-
-<nav>
-    <ol class="sections">
+<nav class="chapters__wrapper">
+    <ol class="chapters">
         {
             chapterSections?.map((section) => (
                 <>
                     {section.title ? (
-                        <li><span>{section.title}</span></li>
-                        <ol>
+                        <li class="section">{section.title}</li>
+                        <ol class="part__wrapper">
                             <ChapterLink slug={slug} chapters={section.chapters} />
                         </ol>
                     ) : (

@@ -10,7 +10,7 @@ const { slug, chapters } = Astro.props;
 {
     chapters.map((chapter) => {
         return (
-            <li>
+            <li class="part">
                 <a href={`/tl/${slug}/${chapter.href}`}>{chapter.label}</a>
             </li>
         );
