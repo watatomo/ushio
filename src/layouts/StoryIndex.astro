@@ -57,8 +57,9 @@ const {
                             <h1 class="en">{title}</h1>
                             {titleOG && <h2 class="og">{titleOG}</h2>}
                         </div>
-                        {description}
-                        <slot />
+                        <slot>
+                            {description}
+                        </slot>
                     </section>
                 </article>
                 <ChapterNav chapterSections={chapterSections} slug={slug} />
