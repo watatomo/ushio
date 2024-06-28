@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .bubble {
     display: grid;
     margin: 1rem 0;
@@ -58,6 +60,15 @@
     }
 }
 
+.name {
+    font-size: 0.85em;
+    line-height: 0.8;
+    font-weight: bold;
+    text-transform: var(--bubble-name-case);
+    color: var(--text-secondary);
+    margin-bottom: var(--bubble-line-gap);
+}
+
 .icon {
     grid-column: 1;
     filter: var(--img-filter, unset);
@@ -82,46 +93,6 @@
         width: 100%;
         height: 100%;
     }
-}
-
-.duo .icon {
-    grid-column: 1;
-    filter: var(--img-filter, unset);
-
-    &__box {
-        border-radius: var(--bubble-icon-border);
-        position: relative;
-        overflow: hidden;
-        width: calc(var(--bubble-icon-size) / 1.25);
-        height: calc(var(--bubble-icon-size) / 1.25);
-        transition: 0.2s ease;
-
-        &:nth-child(2) {
-            left: 10px;
-            bottom: 10px;
-        }
-    }
-
-    &__base {
-        display: block;
-        background: 100% / 100%
-                var(
-                    --icon,
-                    url("https://cdn.jsdelivr.net/gh/enstars/img/icon/unknown.png")
-                ),
-            var(--color, #acb0be);
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.name {
-    font-size: 0.85em;
-    line-height: 0.8;
-    font-weight: bold;
-    text-transform: var(--bubble-name-case);
-    color: var(--text-secondary);
-    margin-bottom: var(--bubble-line-gap);
 }
 
 %icon-silhouette {
@@ -169,6 +140,52 @@
 .hidden {
     .icon__box::after {
         @extend %icon-silhouette;
+    }
+}
+
+.glitch .icon {
+    &__box {
+        &::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(
+                    rgba(16, 16, 18, 0) 50%,
+                    rgba(0, 0, 0, 0.2) 50%
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255, 0, 0, 0.06),
+                    rgba(0, 255, 0, 0.02),
+                    rgba(0, 0, 255, 0.06)
+                );
+            background-size: 100% 2px, 3px 100%;
+            animation: scan 8s linear infinite;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            filter: contrast(0.5);
+            background: rgba(0, 91, 154, 0.1);
+        }
+    }
+}
+
+@keyframes scan {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    100% {
+        background-position: 0 100%, 0 100%;
     }
 }
 

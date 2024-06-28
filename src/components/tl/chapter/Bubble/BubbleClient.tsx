@@ -7,6 +7,7 @@ type CharacterBubbleProps = {
     name?: string;
     hidden?: boolean;
     unknown?: boolean;
+    glitch?: boolean;
 };
 type MCBubbleProps = {
     children: ReactNode;
@@ -37,12 +38,10 @@ function BubbleClient({ children, ...props }: Props) {
             </div>
         );
     }
-    const { character, name, hidden, unknown } = props;
+    const { character, name, hidden, unknown, glitch } = props;
     return (
         <div
-            className={`${styles.bubble}${hidden ? ` ${styles.hidden}` : ""}${
-                unknown ? ` ${styles.unknown}` : ""
-            }`}
+            className={`${styles.bubble}${glitch ? ` ${styles.glitch}` : ""}${hidden ? ` ${styles.hidden}` : ""}${unknown ? ` ${styles.unknown}` : ""}`}
             data-character={character}
         >
             <div className={styles.icon__wrapper}>

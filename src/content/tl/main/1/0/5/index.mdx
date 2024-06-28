@@ -15,31 +15,26 @@ import Narration from "@/components/tl/chapter/Narration";
 import Location from "@/components/tl/chapter/Location.astro";
 import Flashback from "@/components/tl/chapter/Flashback.astro";
 import Diff from "@/components/tl/chapter/Diff.astro";
+import Name from "@/components/tl/chapter/Name.astro";
 
-<Narration>
-<Diff g="m">July 1st. I snuck out of the hospital today.<br/>
-I’m going on my first trip…<br/>
-MC-chan is taking me, like he promised.</Diff>
-<Diff g="f">July 1st. I snuck out of the hospital today.<br/>
-I’m going on my first trip…<br/>
-MC-chan is taking me, like she promised.</Diff>
+{/* <Narration> */}
+<Diff g="m">
+July 1st. I snuck out of the hospital today. I’m going on my first trip… <Name first />-chan is taking me, like he promised.
 
-<Diff g="m">I’m so excited…<br/>
-I wonder if MC-chan can tell when he holds my hand.<br/>
-That’s all I can think about.</Diff>
-<Diff g="f">I’m so excited…<br/>
-I wonder if MC-chan can tell when she holds my hand.<br/>
-That’s all I can think about.</Diff>
+I’m so excited… I wonder if <Name first />-chan can tell when he holds my hand. That’s all I can think about.
+</Diff>
+<Diff g="f">
+July 1st. I snuck out of the hospital today. I’m going on my first trip… <Name first />-chan is taking me, like she promised.
 
-I’ll never forget this day for the rest of my life.<br/>
-Everything I saw, everything I ate, everybody I met… All the smells, the sounds, the colors…<br/>
-And I’ll never forget how warm MC-chan’s hand was.
+I’m so excited… I wonder if <Name first />-chan can tell when she holds my hand. That’s all I can think about.
+</Diff>
+
+I’ll never forget this day for the rest of my life. Everything I saw, everything I ate, everybody I met… All the smells, the sounds, the colors… And I’ll never forget how warm <Name first />-chan’s hand was.
 
 Going on a trip can make you feel so many things.
 
-So I’ve decided.<br/>
-One day… As HAMA Ward 0 mayor, I’ll make sure everyone who visits gets the best hospitality ever.
-</Narration>
+So I’ve decided. One day… As HAMA Ward 0 mayor, I’ll make sure everyone who visits gets the best hospitality ever.
+{/* </Narration> */}
 
 <Location name="Oguro Hospital - Room"/>
 
